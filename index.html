@@ -1,0 +1,1891 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2868
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+<head>\
+<meta charset="UTF-8">\
+<meta name="viewport" content="width=device-width, initial-scale=1.0">\
+<title>NetAcademy \'97 CCNA Dashboard</title>\
+<link rel="preconnect" href="https://fonts.googleapis.com">\
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">\
+<style>\
+/* ========================================\
+   DESIGN TOKENS\
+======================================== */\
+:root \{\
+  --bg:        #07090f;\
+  --surface:   #0d1117;\
+  --panel:     #111820;\
+  --elevated:  #161e2a;\
+  --border:    rgba(255,255,255,0.07);\
+  --border2:   rgba(255,255,255,0.12);\
+\
+  --cyan:      #00e5ff;\
+  --cyan-dim:  rgba(0,229,255,0.12);\
+  --cyan-glow: 0 0 40px rgba(0,229,255,0.18);\
+\
+  --green:     #00ffa3;\
+  --green-dim: rgba(0,255,163,0.1);\
+\
+  --amber:     #ffb830;\
+  --amber-dim: rgba(255,184,48,0.1);\
+\
+  --red:       #ff4d6d;\
+  --red-dim:   rgba(255,77,109,0.1);\
+\
+  --purple:    #a78bfa;\
+  --purple-dim:rgba(167,139,250,0.1);\
+\
+  --text:      #c9d4e0;\
+  --muted:     #4a5568;\
+  --faint:     rgba(255,255,255,0.04);\
+\
+  --sidebar-w: 240px;\
+  --topbar-h:  60px;\
+\
+  --font: 'Outfit', sans-serif;\
+  --mono: 'JetBrains Mono', monospace;\
+\
+  --r-sm: 8px;\
+  --r-md: 12px;\
+  --r-lg: 16px;\
+  --r-xl: 20px;\
+\}\
+\
+*, *::before, *::after \{ box-sizing: border-box; margin: 0; padding: 0; \}\
+html \{ font-size: 15px; \}\
+body \{\
+  font-family: var(--font);\
+  background: var(--bg);\
+  color: var(--text);\
+  line-height: 1.6;\
+  overflow: hidden;\
+  height: 100vh;\
+  display: flex;\
+\}\
+\
+/* ========================================\
+   SIDEBAR\
+======================================== */\
+.sidebar \{\
+  width: var(--sidebar-w);\
+  min-width: var(--sidebar-w);\
+  height: 100vh;\
+  background: var(--surface);\
+  border-right: 1px solid var(--border);\
+  display: flex;\
+  flex-direction: column;\
+  position: relative;\
+  z-index: 10;\
+  transition: width 0.3s, min-width 0.3s;\
+  overflow: hidden;\
+\}\
+.sidebar.collapsed \{ width: 60px; min-width: 60px; \}\
+\
+.sidebar-logo \{\
+  height: var(--topbar-h);\
+  display: flex;\
+  align-items: center;\
+  padding: 0 18px;\
+  border-bottom: 1px solid var(--border);\
+  gap: 10px;\
+  flex-shrink: 0;\
+\}\
+.logo-mark \{\
+  width: 30px;\
+  height: 30px;\
+  background: linear-gradient(135deg, var(--cyan), #0099bb);\
+  border-radius: 8px;\
+  display: flex;\
+  align-items: center;\
+  justify-content: center;\
+  font-size: 0.85rem;\
+  font-weight: 900;\
+  color: #07090f;\
+  flex-shrink: 0;\
+\}\
+.logo-text \{\
+  font-weight: 800;\
+  font-size: 1rem;\
+  color: #fff;\
+  white-space: nowrap;\
+  letter-spacing: -0.01em;\
+\}\
+.logo-text span \{ color: var(--cyan); \}\
+\
+.sidebar-section-label \{\
+  font-size: 0.65rem;\
+  font-weight: 700;\
+  letter-spacing: 0.1em;\
+  text-transform: uppercase;\
+  color: var(--muted);\
+  padding: 16px 18px 6px;\
+  white-space: nowrap;\
+  overflow: hidden;\
+  transition: opacity 0.2s;\
+\}\
+.sidebar.collapsed .sidebar-section-label \{ opacity: 0; \}\
+\
+.nav-item \{\
+  display: flex;\
+  align-items: center;\
+  gap: 12px;\
+  padding: 10px 18px;\
+  margin: 1px 8px;\
+  border-radius: var(--r-sm);\
+  cursor: pointer;\
+  transition: all 0.15s;\
+  position: relative;\
+  white-space: nowrap;\
+  overflow: hidden;\
+\}\
+.nav-item:hover \{ background: var(--faint); color: #fff; \}\
+.nav-item.active \{\
+  background: var(--cyan-dim);\
+  color: var(--cyan);\
+\}\
+.nav-item.active::before \{\
+  content: '';\
+  position: absolute;\
+  left: 0; top: 25%; bottom: 25%;\
+  width: 3px;\
+  background: var(--cyan);\
+  border-radius: 0 3px 3px 0;\
+  margin-left: -8px;\
+\}\
+.nav-icon \{\
+  font-size: 1rem;\
+  flex-shrink: 0;\
+  width: 20px;\
+  text-align: center;\
+\}\
+.nav-label \{ font-size: 0.875rem; font-weight: 500; transition: opacity 0.2s; \}\
+.sidebar.collapsed .nav-label \{ opacity: 0; \}\
+.nav-badge \{\
+  margin-left: auto;\
+  background: var(--cyan);\
+  color: #07090f;\
+  font-size: 0.65rem;\
+  font-weight: 800;\
+  padding: 1px 6px;\
+  border-radius: 20px;\
+  transition: opacity 0.2s;\
+\}\
+.sidebar.collapsed .nav-badge \{ opacity: 0; \}\
+\
+.sidebar-footer \{\
+  margin-top: auto;\
+  border-top: 1px solid var(--border);\
+  padding: 14px 18px;\
+  display: flex;\
+  align-items: center;\
+  gap: 10px;\
+  overflow: hidden;\
+\}\
+.avatar \{\
+  width: 32px; height: 32px;\
+  background: linear-gradient(135deg, var(--purple), #6d28d9);\
+  border-radius: 50%;\
+  display: flex; align-items: center; justify-content: center;\
+  font-size: 0.75rem; font-weight: 700; color: #fff;\
+  flex-shrink: 0;\
+\}\
+.user-info \{ overflow: hidden; transition: opacity 0.2s; white-space: nowrap; \}\
+.sidebar.collapsed .user-info \{ opacity: 0; \}\
+.user-name \{ font-size: 0.8rem; font-weight: 600; color: #fff; \}\
+.user-role \{ font-size: 0.7rem; color: var(--muted); \}\
+\
+.collapse-btn \{\
+  position: absolute;\
+  top: 50%;\
+  right: -12px;\
+  transform: translateY(-50%);\
+  width: 24px; height: 24px;\
+  background: var(--elevated);\
+  border: 1px solid var(--border2);\
+  border-radius: 50%;\
+  cursor: pointer;\
+  display: flex; align-items: center; justify-content: center;\
+  font-size: 0.65rem;\
+  color: var(--muted);\
+  z-index: 20;\
+  transition: all 0.2s;\
+\}\
+.collapse-btn:hover \{ color: #fff; border-color: var(--cyan); \}\
+\
+/* ========================================\
+   MAIN LAYOUT\
+======================================== */\
+.main \{\
+  flex: 1;\
+  display: flex;\
+  flex-direction: column;\
+  overflow: hidden;\
+\}\
+\
+/* ========================================\
+   TOPBAR\
+======================================== */\
+.topbar \{\
+  height: var(--topbar-h);\
+  background: var(--surface);\
+  border-bottom: 1px solid var(--border);\
+  display: flex;\
+  align-items: center;\
+  padding: 0 24px;\
+  gap: 16px;\
+  flex-shrink: 0;\
+\}\
+.page-title \{ font-size: 1rem; font-weight: 700; color: #fff; \}\
+.page-breadcrumb \{ font-size: 0.78rem; color: var(--muted); display: flex; align-items: center; gap: 6px; \}\
+.page-breadcrumb span \{ color: var(--text); \}\
+\
+.topbar-right \{ margin-left: auto; display: flex; align-items: center; gap: 12px; \}\
+.topbar-btn \{\
+  background: var(--elevated);\
+  border: 1px solid var(--border);\
+  border-radius: var(--r-sm);\
+  padding: 7px 14px;\
+  color: var(--text);\
+  font-family: var(--font);\
+  font-size: 0.8rem;\
+  font-weight: 500;\
+  cursor: pointer;\
+  transition: all 0.15s;\
+  display: flex; align-items: center; gap: 6px;\
+\}\
+.topbar-btn:hover \{ border-color: var(--border2); color: #fff; \}\
+.topbar-btn.primary \{\
+  background: var(--cyan);\
+  border-color: var(--cyan);\
+  color: #07090f;\
+  font-weight: 700;\
+\}\
+.topbar-btn.primary:hover \{ background: #00c8e6; \}\
+\
+.streak-pill \{\
+  display: flex; align-items: center; gap: 6px;\
+  background: rgba(255,184,48,0.1);\
+  border: 1px solid rgba(255,184,48,0.25);\
+  border-radius: 20px;\
+  padding: 5px 12px;\
+  font-size: 0.78rem; font-weight: 700; color: var(--amber);\
+\}\
+\
+.mobile-menu-btn \{\
+  display: none;\
+  background: none; border: none;\
+  font-size: 1.1rem; color: var(--text); cursor: pointer;\
+\}\
+\
+/* ========================================\
+   CONTENT AREA\
+======================================== */\
+.content \{\
+  flex: 1;\
+  overflow-y: auto;\
+  padding: 24px;\
+  scrollbar-width: thin;\
+  scrollbar-color: var(--elevated) transparent;\
+\}\
+.content::-webkit-scrollbar \{ width: 6px; \}\
+.content::-webkit-scrollbar-track \{ background: transparent; \}\
+.content::-webkit-scrollbar-thumb \{ background: var(--elevated); border-radius: 3px; \}\
+\
+/* ========================================\
+   VIEW SYSTEM\
+======================================== */\
+.view \{ display: none; \}\
+.view.active \{ display: block; animation: viewIn 0.25s ease; \}\
+@keyframes viewIn \{ from \{ opacity:0; transform:translateY(8px); \} to \{ opacity:1; transform:translateY(0); \} \}\
+\
+/* ========================================\
+   GRID HELPERS\
+======================================== */\
+.grid \{ display: grid; gap: 16px; \}\
+.grid-4 \{ grid-template-columns: repeat(4,1fr); \}\
+.grid-3 \{ grid-template-columns: repeat(3,1fr); \}\
+.grid-2 \{ grid-template-columns: repeat(2,1fr); \}\
+.grid-2-1 \{ grid-template-columns: 2fr 1fr; \}\
+.grid-3-2 \{ grid-template-columns: 3fr 2fr; \}\
+@media(max-width:1200px)\{ .grid-4 \{ grid-template-columns: repeat(2,1fr); \} \}\
+@media(max-width:900px)\{ .grid-3 \{ grid-template-columns: repeat(2,1fr); \} .grid-2-1,.grid-3-2 \{ grid-template-columns: 1fr; \} \}\
+@media(max-width:640px)\{ .grid-4,.grid-3,.grid-2 \{ grid-template-columns: 1fr; \} \}\
+\
+/* ========================================\
+   CARDS\
+======================================== */\
+.card \{\
+  background: var(--panel);\
+  border: 1px solid var(--border);\
+  border-radius: var(--r-lg);\
+  padding: 20px;\
+\}\
+.card:hover \{ border-color: var(--border2); \}\
+.card-header \{\
+  display: flex; justify-content: space-between; align-items: center;\
+  margin-bottom: 16px;\
+\}\
+.card-title \{\
+  font-size: 0.875rem;\
+  font-weight: 700;\
+  color: #fff;\
+  display: flex; align-items: center; gap: 8px;\
+\}\
+.card-action \{\
+  font-size: 0.75rem; color: var(--cyan);\
+  cursor: pointer; font-weight: 600;\
+  background: none; border: none; font-family: var(--font);\
+  transition: opacity 0.2s;\
+\}\
+.card-action:hover \{ opacity: 0.7; \}\
+\
+/* ========================================\
+   STAT CARDS\
+======================================== */\
+.stat-card \{\
+  background: var(--panel);\
+  border: 1px solid var(--border);\
+  border-radius: var(--r-lg);\
+  padding: 18px 20px;\
+  position: relative;\
+  overflow: hidden;\
+  transition: transform 0.2s, border-color 0.2s;\
+\}\
+.stat-card:hover \{ transform: translateY(-2px); \}\
+.stat-card::after \{\
+  content: '';\
+  position: absolute;\
+  top: 0; right: 0;\
+  width: 80px; height: 80px;\
+  border-radius: 50%;\
+  opacity: 0.06;\
+  transform: translate(20px,-20px);\
+\}\
+.stat-card.cyan::after \{ background: var(--cyan); \}\
+.stat-card.green::after \{ background: var(--green); \}\
+.stat-card.amber::after \{ background: var(--amber); \}\
+.stat-card.purple::after \{ background: var(--purple); \}\
+.stat-card.red::after \{ background: var(--red); \}\
+\
+.stat-card:hover.cyan \{ border-color: rgba(0,229,255,0.25); \}\
+.stat-card:hover.green \{ border-color: rgba(0,255,163,0.25); \}\
+.stat-card:hover.amber \{ border-color: rgba(255,184,48,0.25); \}\
+.stat-card:hover.purple \{ border-color: rgba(167,139,250,0.25); \}\
+\
+.stat-icon \{\
+  width: 36px; height: 36px;\
+  border-radius: var(--r-sm);\
+  display: flex; align-items: center; justify-content: center;\
+  font-size: 1rem; margin-bottom: 12px;\
+\}\
+.stat-icon.cyan \{ background: var(--cyan-dim); color: var(--cyan); \}\
+.stat-icon.green \{ background: var(--green-dim); color: var(--green); \}\
+.stat-icon.amber \{ background: var(--amber-dim); color: var(--amber); \}\
+.stat-icon.purple \{ background: var(--purple-dim); color: var(--purple); \}\
+.stat-icon.red \{ background: var(--red-dim); color: var(--red); \}\
+\
+.stat-num \{\
+  font-size: 1.75rem; font-weight: 800; color: #fff;\
+  line-height: 1; margin-bottom: 4px;\
+\}\
+.stat-label \{ font-size: 0.78rem; color: var(--muted); font-weight: 500; \}\
+.stat-change \{\
+  font-size: 0.72rem; font-weight: 700;\
+  margin-top: 8px; display: flex; align-items: center; gap: 4px;\
+\}\
+.stat-change.up \{ color: var(--green); \}\
+.stat-change.down \{ color: var(--red); \}\
+\
+/* ========================================\
+   PROGRESS COMPONENTS\
+======================================== */\
+.progress-track \{\
+  background: var(--elevated);\
+  border-radius: 100px;\
+  height: 6px;\
+  overflow: hidden;\
+  margin-top: 8px;\
+\}\
+.progress-fill \{\
+  height: 100%;\
+  border-radius: 100px;\
+  transition: width 0.8s cubic-bezier(0.4,0,0.2,1);\
+\}\
+.pf-cyan \{ background: linear-gradient(90deg, var(--cyan), #00aabb); \}\
+.pf-green \{ background: var(--green); \}\
+.pf-amber \{ background: var(--amber); \}\
+.pf-purple \{ background: var(--purple); \}\
+.pf-red \{ background: var(--red); \}\
+.pf-multi \{ background: linear-gradient(90deg, var(--cyan), var(--purple)); \}\
+\
+/* ========================================\
+   DOMAIN PROGRESS LIST\
+======================================== */\
+.domain-row \{\
+  display: flex; align-items: center; gap: 12px;\
+  padding: 10px 0;\
+  border-bottom: 1px solid var(--border);\
+\}\
+.domain-row:last-child \{ border-bottom: none; \}\
+.domain-dot \{\
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;\
+\}\
+.domain-name \{ font-size: 0.82rem; font-weight: 500; flex: 1; min-width: 0; \}\
+.domain-pct \{ font-size: 0.75rem; font-weight: 700; color: #fff; width: 32px; text-align: right; flex-shrink: 0; \}\
+.domain-bar \{ flex: 1.5; \}\
+\
+/* ========================================\
+   ACTIVITY FEED\
+======================================== */\
+.activity-item \{\
+  display: flex; gap: 12px; align-items: flex-start;\
+  padding: 10px 0;\
+  border-bottom: 1px solid var(--border);\
+\}\
+.activity-item:last-child \{ border-bottom: none; \}\
+.act-icon \{\
+  width: 32px; height: 32px; border-radius: var(--r-sm);\
+  display: flex; align-items: center; justify-content: center;\
+  font-size: 0.85rem; flex-shrink: 0;\
+\}\
+.act-body \{ flex: 1; min-width: 0; \}\
+.act-title \{ font-size: 0.82rem; font-weight: 600; color: #fff; margin-bottom: 2px; \}\
+.act-sub \{ font-size: 0.75rem; color: var(--muted); \}\
+.act-time \{ font-size: 0.7rem; color: var(--muted); flex-shrink: 0; white-space: nowrap; \}\
+\
+/* ========================================\
+   TOPIC PILLS / TAGS\
+======================================== */\
+.tag \{\
+  display: inline-flex; align-items: center;\
+  padding: 3px 10px; border-radius: 20px;\
+  font-size: 0.7rem; font-weight: 700;\
+\}\
+.tag-cyan \{ background: var(--cyan-dim); color: var(--cyan); border: 1px solid rgba(0,229,255,0.2); \}\
+.tag-green \{ background: var(--green-dim); color: var(--green); border: 1px solid rgba(0,255,163,0.2); \}\
+.tag-amber \{ background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(255,184,48,0.2); \}\
+.tag-purple \{ background: var(--purple-dim); color: var(--purple); border: 1px solid rgba(167,139,250,0.2); \}\
+.tag-red \{ background: var(--red-dim); color: var(--red); border: 1px solid rgba(255,77,109,0.2); \}\
+\
+/* ========================================\
+   MINI CALENDAR / HEATMAP\
+======================================== */\
+.heatmap \{\
+  display: grid;\
+  grid-template-columns: repeat(7,1fr);\
+  gap: 4px;\
+\}\
+.hm-cell \{\
+  aspect-ratio: 1;\
+  border-radius: 4px;\
+  background: var(--elevated);\
+  cursor: pointer;\
+  transition: transform 0.15s;\
+\}\
+.hm-cell:hover \{ transform: scale(1.2); \}\
+.hm-0 \{ background: var(--elevated); \}\
+.hm-1 \{ background: rgba(0,229,255,0.2); \}\
+.hm-2 \{ background: rgba(0,229,255,0.4); \}\
+.hm-3 \{ background: rgba(0,229,255,0.7); \}\
+.hm-4 \{ background: var(--cyan); \}\
+.hm-today \{ outline: 2px solid var(--cyan); outline-offset: 2px; \}\
+\
+/* ========================================\
+   SECTION HEADERS\
+======================================== */\
+.section-h \{\
+  display: flex; justify-content: space-between; align-items: baseline;\
+  margin-bottom: 16px;\
+\}\
+.section-h h2 \{ font-size: 1rem; font-weight: 700; color: #fff; \}\
+.section-h a \{ font-size: 0.78rem; color: var(--cyan); cursor: pointer; text-decoration: none; font-weight: 600; \}\
+\
+/* ========================================\
+   COURSE CARDS (Study / Videos)\
+======================================== */\
+.course-card \{\
+  background: var(--panel);\
+  border: 1px solid var(--border);\
+  border-radius: var(--r-lg);\
+  overflow: hidden;\
+  cursor: pointer;\
+  transition: all 0.2s;\
+\}\
+.course-card:hover \{ transform: translateY(-3px); border-color: var(--border2); box-shadow: 0 8px 30px rgba(0,0,0,0.4); \}\
+.course-thumb \{\
+  height: 130px;\
+  display: flex; align-items: center; justify-content: center;\
+  font-size: 2.5rem;\
+  position: relative;\
+  overflow: hidden;\
+\}\
+.course-thumb-inner \{\
+  position: absolute; inset: 0;\
+  display: flex; align-items: center; justify-content: center;\
+  font-size: 5rem; opacity: 0.07;\
+\}\
+.course-info \{ padding: 14px 16px; \}\
+.course-title \{ font-size: 0.875rem; font-weight: 700; color: #fff; margin-bottom: 4px; line-height: 1.3; \}\
+.course-meta \{\
+  display: flex; align-items: center; gap: 8px;\
+  font-size: 0.75rem; color: var(--muted); margin-bottom: 10px;\
+\}\
+.course-progress-label \{\
+  display: flex; justify-content: space-between;\
+  font-size: 0.72rem; color: var(--muted); margin-bottom: 4px;\
+\}\
+.course-footer \{\
+  display: flex; align-items: center; justify-content: space-between;\
+  padding: 10px 16px;\
+  border-top: 1px solid var(--border);\
+\}\
+\
+/* ========================================\
+   QUIZ STYLES\
+======================================== */\
+.quiz-wrap \{ max-width: 760px; \}\
+.quiz-meta \{\
+  display: flex; align-items: center; gap: 12px; margin-bottom: 20px;\
+\}\
+.qm-badge \{\
+  padding: 4px 12px; border-radius: 20px;\
+  font-size: 0.72rem; font-weight: 700;\
+\}\
+.quiz-q-text \{\
+  font-size: 1.05rem; font-weight: 600; color: #fff;\
+  line-height: 1.55; margin-bottom: 20px;\
+\}\
+.quiz-options \{ display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; \}\
+.quiz-option \{\
+  background: var(--elevated);\
+  border: 1px solid var(--border);\
+  border-radius: var(--r-md);\
+  padding: 14px 16px;\
+  display: flex; align-items: center; gap: 14px;\
+  cursor: pointer;\
+  transition: all 0.15s;\
+  font-size: 0.9rem;\
+\}\
+.quiz-option:hover \{ border-color: rgba(0,229,255,0.3); background: rgba(0,229,255,0.03); \}\
+.quiz-option.correct \{ border-color: rgba(0,255,163,0.5); background: rgba(0,255,163,0.05); color: var(--green); \}\
+.quiz-option.wrong \{ border-color: rgba(255,77,109,0.5); background: rgba(255,77,109,0.05); color: var(--red); \}\
+.opt-key \{\
+  width: 30px; height: 30px;\
+  border-radius: 8px;\
+  background: var(--panel);\
+  display: flex; align-items: center; justify-content: center;\
+  font-size: 0.78rem; font-weight: 700;\
+  flex-shrink: 0;\
+  border: 1px solid var(--border);\
+  transition: all 0.15s;\
+\}\
+.quiz-option.correct .opt-key \{ background: var(--green); color: #07090f; border-color: var(--green); \}\
+.quiz-option.wrong .opt-key \{ background: var(--red); color: #fff; border-color: var(--red); \}\
+.quiz-feedback \{\
+  border-radius: var(--r-md);\
+  padding: 12px 16px;\
+  font-size: 0.85rem;\
+  margin-bottom: 16px;\
+  display: none;\
+\}\
+.quiz-feedback.show \{ display: block; \}\
+.quiz-feedback.correct \{ background: rgba(0,255,163,0.07); border: 1px solid rgba(0,255,163,0.2); color: var(--green); \}\
+.quiz-feedback.wrong \{ background: rgba(255,77,109,0.07); border: 1px solid rgba(255,77,109,0.2); color: var(--red); \}\
+.quiz-controls \{ display: flex; align-items: center; gap: 12px; \}\
+.quiz-score-view \{ text-align: center; padding: 40px 20px; \}\
+.score-ring \{ display: inline-flex; align-items: center; justify-content: center; position: relative; \}\
+.score-ring-num \{\
+  position: absolute;\
+  font-size: 2rem; font-weight: 900; color: #fff;\
+  font-family: var(--font);\
+\}\
+.score-sub \{ color: var(--muted); margin-top: 8px; font-size: 0.875rem; \}\
+.score-grade \{ font-size: 1.5rem; font-weight: 800; color: #fff; margin: 12px 0 4px; \}\
+\
+/* ========================================\
+   FLASHCARD\
+======================================== */\
+.fc-outer \{ perspective: 1200px; max-width: 620px; margin: 0 auto 24px; \}\
+.fc-inner \{\
+  width: 100%; height: 260px;\
+  transform-style: preserve-3d;\
+  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);\
+  cursor: pointer;\
+  position: relative;\
+\}\
+.fc-inner.flipped \{ transform: rotateY(180deg); \}\
+.fc-face \{\
+  position: absolute; inset: 0;\
+  border-radius: var(--r-xl);\
+  backface-visibility: hidden;\
+  display: flex; flex-direction: column;\
+  align-items: center; justify-content: center;\
+  padding: 28px 32px; text-align: center;\
+\}\
+.fc-face.front \{\
+  background: var(--panel);\
+  border: 1px solid var(--border2);\
+\}\
+.fc-face.back \{\
+  transform: rotateY(180deg);\
+  background: linear-gradient(135deg, rgba(0,229,255,0.06) 0%, rgba(167,139,250,0.06) 100%);\
+  border: 1px solid rgba(0,229,255,0.2);\
+\}\
+.fc-chip \{\
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;\
+  color: var(--muted); margin-bottom: 14px;\
+  display: flex; align-items: center; gap: 6px;\
+\}\
+.fc-chip::before,.fc-chip::after \{ content: '\'97\'97'; opacity: 0.3; \}\
+.fc-text \{ font-size: 1.15rem; font-weight: 600; color: #fff; line-height: 1.45; \}\
+.fc-face.back .fc-text \{ font-size: 0.95rem; font-weight: 400; color: var(--text); \}\
+.fc-hint \{ font-size: 0.75rem; color: var(--muted); margin-top: 14px; \}\
+.fc-controls \{ display: flex; align-items: center; justify-content: space-between; max-width: 620px; margin: 0 auto; \}\
+.fc-nav \{ display: flex; gap: 8px; \}\
+.fc-rating \{ display: flex; gap: 8px; \}\
+\
+/* ========================================\
+   TOOLS\
+======================================== */\
+.tool-block \{\
+  background: var(--panel);\
+  border: 1px solid var(--border);\
+  border-radius: var(--r-lg);\
+  padding: 20px;\
+\}\
+.tool-label \{\
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;\
+  text-transform: uppercase; color: var(--muted);\
+  margin-bottom: 6px;\
+\}\
+.tool-input \{\
+  width: 100%;\
+  background: var(--elevated);\
+  border: 1px solid var(--border);\
+  border-radius: var(--r-sm);\
+  padding: 10px 14px;\
+  color: #fff;\
+  font-family: var(--font);\
+  font-size: 0.875rem;\
+  outline: none;\
+  transition: border-color 0.15s;\
+  margin-bottom: 10px;\
+\}\
+.tool-input:focus \{ border-color: rgba(0,229,255,0.4); \}\
+.tool-result \{\
+  background: var(--bg);\
+  border: 1px solid var(--border);\
+  border-radius: var(--r-sm);\
+  padding: 14px;\
+  font-family: var(--mono);\
+  font-size: 0.78rem;\
+  color: var(--green);\
+  line-height: 1.9;\
+  white-space: pre;\
+  display: none;\
+  margin-top: 10px;\
+  overflow-x: auto;\
+\}\
+.tool-result.show \{ display: block; \}\
+\
+/* ========================================\
+   CHEAT SHEET TABLE\
+======================================== */\
+.ref-table \{ width: 100%; border-collapse: collapse; \}\
+.ref-table th \{\
+  text-align: left; padding: 8px 12px;\
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;\
+  text-transform: uppercase; color: var(--muted);\
+  border-bottom: 1px solid var(--border);\
+\}\
+.ref-table td \{ padding: 10px 12px; font-size: 0.82rem; border-bottom: 1px solid var(--border); \}\
+.ref-table tr:last-child td \{ border-bottom: none; \}\
+.ref-table tr:hover td \{ background: var(--faint); \}\
+.ref-table .mono \{ font-family: var(--mono); color: var(--cyan); font-size: 0.78rem; \}\
+\
+/* ========================================\
+   LABS GRID\
+======================================== */\
+.lab-row \{\
+  display: flex; align-items: center; gap: 16px;\
+  padding: 14px;\
+  background: var(--elevated);\
+  border-radius: var(--r-md);\
+  border: 1px solid var(--border);\
+  cursor: pointer;\
+  transition: all 0.15s;\
+\}\
+.lab-row:hover \{ border-color: var(--border2); \}\
+.lab-thumb \{\
+  width: 56px; height: 56px;\
+  border-radius: var(--r-sm);\
+  display: flex; align-items: center; justify-content: center;\
+  font-size: 1.5rem; flex-shrink: 0;\
+\}\
+.lab-body \{ flex: 1; min-width: 0; \}\
+.lab-name \{ font-size: 0.875rem; font-weight: 700; color: #fff; margin-bottom: 3px; \}\
+.lab-desc \{ font-size: 0.75rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; \}\
+.lab-meta \{ display: flex; gap: 8px; margin-top: 5px; \}\
+.lab-actions \{ display: flex; gap: 8px; flex-shrink: 0; \}\
+\
+/* ========================================\
+   PLANNER\
+======================================== */\
+.week-row \{\
+  display: grid;\
+  grid-template-columns: repeat(7,1fr);\
+  gap: 6px;\
+  margin-bottom: 20px;\
+\}\
+.day-box \{\
+  background: var(--elevated);\
+  border-radius: var(--r-md);\
+  padding: 10px 6px;\
+  text-align: center;\
+  cursor: pointer;\
+  border: 1px solid var(--border);\
+  transition: all 0.15s;\
+\}\
+.day-box:hover \{ border-color: var(--border2); \}\
+.day-box.today \{\
+  background: var(--cyan-dim);\
+  border-color: rgba(0,229,255,0.3);\
+\}\
+.day-box.has-task \{ border-bottom: 3px solid rgba(167,139,250,0.5); \}\
+.day-abbr \{ font-size: 0.62rem; font-weight: 700; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; \}\
+.day-num \{ font-size: 0.9rem; font-weight: 800; color: #fff; \}\
+.day-box.today .day-abbr \{ color: var(--cyan); \}\
+.day-box.today .day-num \{ color: var(--cyan); \}\
+\
+.task-item \{\
+  display: flex; align-items: center; gap: 12px;\
+  padding: 12px 14px;\
+  background: var(--elevated);\
+  border-radius: var(--r-md);\
+  border: 1px solid var(--border);\
+  margin-bottom: 8px;\
+\}\
+.task-cb \{\
+  width: 18px; height: 18px;\
+  border-radius: 5px;\
+  border: 2px solid var(--border2);\
+  cursor: pointer;\
+  display: flex; align-items: center; justify-content: center;\
+  font-size: 0.65rem; flex-shrink: 0; transition: all 0.15s;\
+\}\
+.task-cb.done \{ background: var(--green); border-color: var(--green); color: #07090f; \}\
+.task-label \{ flex: 1; font-size: 0.85rem; \}\
+.task-label.done \{ text-decoration: line-through; color: var(--muted); \}\
+.task-time \{ font-size: 0.72rem; color: var(--muted); font-family: var(--mono); \}\
+.task-add \{\
+  display: flex; gap: 8px; margin-top: 12px;\
+\}\
+\
+/* ========================================\
+   TABS (inline)\
+======================================== */\
+.tab-bar \{\
+  display: flex; gap: 4px; flex-wrap: wrap;\
+  background: var(--elevated);\
+  border-radius: var(--r-md);\
+  padding: 4px;\
+  margin-bottom: 20px;\
+\}\
+.tab-btn \{\
+  padding: 7px 16px;\
+  border-radius: var(--r-sm);\
+  border: none;\
+  background: transparent;\
+  color: var(--muted);\
+  font-family: var(--font);\
+  font-size: 0.8rem; font-weight: 600;\
+  cursor: pointer; transition: all 0.15s;\
+  white-space: nowrap;\
+\}\
+.tab-btn.active \{ background: var(--panel); color: #fff; \}\
+.tab-btn:hover:not(.active) \{ color: var(--text); \}\
+.tab-content \{ display: none; animation: viewIn 0.2s ease; \}\
+.tab-content.active \{ display: block; \}\
+\
+/* ========================================\
+   TOPIC LIST ROWS\
+======================================== */\
+.topic-row \{\
+  display: flex; align-items: center; gap: 12px;\
+  padding: 12px 14px;\
+  background: var(--elevated);\
+  border-radius: var(--r-md);\
+  border: 1px solid var(--border);\
+  cursor: pointer;\
+  transition: all 0.15s;\
+  margin-bottom: 6px;\
+\}\
+.topic-row:hover \{ border-color: rgba(0,229,255,0.2); background: rgba(0,229,255,0.02); \}\
+.topic-emoji \{ font-size: 1.2rem; flex-shrink: 0; \}\
+.topic-info \{ flex: 1; min-width: 0; \}\
+.topic-name \{ font-size: 0.875rem; font-weight: 600; color: #fff; margin-bottom: 1px; \}\
+.topic-hint \{ font-size: 0.72rem; color: var(--muted); \}\
+.topic-right \{ display: flex; align-items: center; gap: 8px; flex-shrink: 0; \}\
+\
+/* ========================================\
+   BUTTONS\
+======================================== */\
+.btn \{\
+  display: inline-flex; align-items: center; gap: 7px;\
+  padding: 9px 18px;\
+  border-radius: var(--r-sm);\
+  font-family: var(--font);\
+  font-size: 0.85rem; font-weight: 600;\
+  cursor: pointer; border: none; transition: all 0.15s;\
+\}\
+.btn-cyan \{ background: var(--cyan); color: #07090f; \}\
+.btn-cyan:hover \{ background: #00c8e6; transform: translateY(-1px); \}\
+.btn-outline \{ background: transparent; color: var(--text); border: 1px solid var(--border2); \}\
+.btn-outline:hover \{ color: #fff; border-color: rgba(0,229,255,0.3); \}\
+.btn-ghost \{ background: var(--elevated); color: var(--text); \}\
+.btn-ghost:hover \{ color: #fff; \}\
+.btn-sm \{ padding: 6px 14px; font-size: 0.78rem; \}\
+.btn-xs \{ padding: 4px 10px; font-size: 0.72rem; border-radius: 6px; \}\
+\
+/* ========================================\
+   MINI SPARKLINE (SVG bars)\
+======================================== */\
+.sparkline \{ display: flex; align-items: flex-end; gap: 3px; height: 32px; \}\
+.sp-bar \{\
+  width: 6px; border-radius: 3px 3px 0 0;\
+  background: var(--elevated);\
+  transition: height 0.6s;\
+\}\
+.sp-bar.active \{ background: var(--cyan); \}\
+\
+/* ========================================\
+   VIDEO THUMB\
+======================================== */\
+.video-thumb-card \{\
+  background: var(--panel);\
+  border: 1px solid var(--border);\
+  border-radius: var(--r-lg);\
+  overflow: hidden;\
+  cursor: pointer;\
+  transition: all 0.2s;\
+\}\
+.video-thumb-card:hover \{ transform: translateY(-3px); border-color: var(--border2); box-shadow: 0 8px 30px rgba(0,0,0,0.5); \}\
+.vt-thumb \{\
+  height: 140px;\
+  display: flex; align-items: center; justify-content: center;\
+  position: relative;\
+  overflow: hidden;\
+\}\
+.vt-bg \{ position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 4rem; opacity: 0.08; \}\
+.vt-play \{\
+  width: 44px; height: 44px;\
+  background: rgba(0,229,255,0.9);\
+  border-radius: 50%;\
+  display: flex; align-items: center; justify-content: center;\
+  font-size: 1rem; position: relative; z-index: 1;\
+  transition: transform 0.15s;\
+\}\
+.video-thumb-card:hover .vt-play \{ transform: scale(1.12); \}\
+.vt-dur \{\
+  position: absolute; bottom: 8px; right: 8px;\
+  background: rgba(0,0,0,0.85);\
+  color: #fff; font-size: 0.68rem; font-weight: 700;\
+  padding: 2px 6px; border-radius: 4px;\
+  font-family: var(--mono);\
+\}\
+.vt-info \{ padding: 12px 14px; \}\
+.vt-title \{ font-size: 0.85rem; font-weight: 700; color: #fff; margin-bottom: 5px; line-height: 1.3; \}\
+.vt-meta \{ display: flex; align-items: center; gap: 8px; font-size: 0.72rem; color: var(--muted); \}\
+\
+/* ========================================\
+   MODAL\
+======================================== */\
+.modal-bg \{\
+  position: fixed; inset: 0;\
+  background: rgba(0,0,0,0.75);\
+  backdrop-filter: blur(6px);\
+  z-index: 200;\
+  display: none; align-items: center; justify-content: center;\
+  padding: 20px;\
+\}\
+.modal-bg.open \{ display: flex; \}\
+.modal-box \{\
+  background: var(--panel);\
+  border: 1px solid var(--border2);\
+  border-radius: var(--r-xl);\
+  padding: 24px;\
+  max-width: 540px; width: 100%;\
+  animation: viewIn 0.25s ease;\
+\}\
+.modal-head \{ display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; \}\
+.modal-title \{ font-size: 1rem; font-weight: 800; color: #fff; \}\
+.modal-close \{ background: none; border: none; color: var(--muted); cursor: pointer; font-size: 1.1rem; transition: color 0.15s; \}\
+.modal-close:hover \{ color: #fff; \}\
+\
+/* ========================================\
+   RESPONSIVE\
+======================================== */\
+@media(max-width:768px)\{\
+  .sidebar \{ position: fixed; left: -var(--sidebar-w); z-index: 50; transition: left 0.3s; \}\
+  .sidebar.mobile-open \{ left: 0; \}\
+  .sidebar:not(.mobile-open) \{ left: calc(-1 * var(--sidebar-w)); \}\
+  .collapse-btn \{ display: none; \}\
+  .mobile-menu-btn \{ display: block; \}\
+  .content \{ padding: 16px; \}\
+\}\
+\
+/* ========================================\
+   NOTIFICATION DOT\
+======================================== */\
+.notif-dot \{\
+  width: 7px; height: 7px; border-radius: 50%;\
+  background: var(--red); margin-left: 4px; display: inline-block;\
+\}\
+\
+/* ========================================\
+   CIRCULAR PROGRESS (SVG)\
+======================================== */\
+.ring-wrap \{ position: relative; display: inline-flex; \}\
+.ring-label \{\
+  position: absolute; inset: 0;\
+  display: flex; flex-direction: column;\
+  align-items: center; justify-content: center;\
+  text-align: center;\
+\}\
+.ring-num \{ font-size: 1.35rem; font-weight: 900; color: #fff; line-height: 1; \}\
+.ring-sub \{ font-size: 0.62rem; color: var(--muted); margin-top: 2px; \}\
+\
+/* Scrollbar for tab content areas */\
+.scroll-area \{ overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--elevated) transparent; \}\
+</style>\
+</head>\
+<body>\
+\
+<!-- ============================================================\
+     SIDEBAR\
+============================================================ -->\
+<aside class="sidebar" id="sidebar">\
+  <div class="collapse-btn" id="collapseBtn" title="Collapse sidebar">\'8b</div>\
+\
+  <div class="sidebar-logo">\
+    <div class="logo-mark">NA</div>\
+    <div class="logo-text">Net<span>Academy</span></div>\
+  </div>\
+\
+  <div class="sidebar-section-label">Main</div>\
+  <div class="nav-item active" onclick="gotoView('dashboard',this)">\
+    <span class="nav-icon">\uc0\u11035 </span>\
+    <span class="nav-label">Dashboard</span>\
+  </div>\
+  <div class="nav-item" onclick="gotoView('study',this)">\
+    <span class="nav-icon">\uc0\u55357 \u56534 </span>\
+    <span class="nav-label">Study Materials</span>\
+  </div>\
+  <div class="nav-item" onclick="gotoView('exam',this)">\
+    <span class="nav-icon">\uc0\u55357 \u56541 </span>\
+    <span class="nav-label">Practice Exam</span>\
+    <span class="nav-badge">10</span>\
+  </div>\
+  <div class="nav-item" onclick="gotoView('flashcards',this)">\
+    <span class="nav-icon">\uc0\u55356 \u56527 </span>\
+    <span class="nav-label">Flashcards</span>\
+  </div>\
+  <div class="nav-item" onclick="gotoView('videos',this)">\
+    <span class="nav-icon">\uc0\u55356 \u57260 </span>\
+    <span class="nav-label">Video Tutorials</span>\
+  </div>\
+  <div class="nav-item" onclick="gotoView('labs',this)">\
+    <span class="nav-icon">\uc0\u55357 \u56741 \u65039 </span>\
+    <span class="nav-label">Virtual Labs</span>\
+  </div>\
+\
+  <div class="sidebar-section-label">Resources</div>\
+  <div class="nav-item" onclick="gotoView('cheatsheets',this)">\
+    <span class="nav-icon">\uc0\u55357 \u56523 </span>\
+    <span class="nav-label">Cheat Sheets</span>\
+  </div>\
+  <div class="nav-item" onclick="gotoView('tools',this)">\
+    <span class="nav-icon">\uc0\u55357 \u56615 </span>\
+    <span class="nav-label">Network Tools</span>\
+  </div>\
+  <div class="nav-item" onclick="gotoView('planner',this)">\
+    <span class="nav-icon">\uc0\u55357 \u56517 </span>\
+    <span class="nav-label">Study Planner</span>\
+  </div>\
+\
+  <div class="sidebar-footer">\
+    <div class="avatar">YO</div>\
+    <div class="user-info">\
+      <div class="user-name">Your Name</div>\
+      <div class="user-role">CCNA Candidate</div>\
+    </div>\
+  </div>\
+</aside>\
+\
+<!-- ============================================================\
+     MAIN\
+============================================================ -->\
+<div class="main">\
+\
+  <!-- TOPBAR -->\
+  <header class="topbar">\
+    <button class="mobile-menu-btn" onclick="document.getElementById('sidebar').classList.toggle('mobile-open')">\uc0\u9776 </button>\
+    <div>\
+      <div class="page-title" id="pageTitle">Dashboard</div>\
+    </div>\
+    <div class="topbar-right">\
+      <div class="streak-pill">\uc0\u55357 \u56613  7-day streak</div>\
+      <button class="topbar-btn" onclick="gotoView('exam', document.querySelector('[onclick*=exam]'))">\uc0\u9654  Start Exam</button>\
+    </div>\
+  </header>\
+\
+  <!-- CONTENT -->\
+  <div class="content">\
+\
+    <!-- ================================================\
+         DASHBOARD VIEW\
+    ================================================ -->\
+    <div class="view active" id="view-dashboard">\
+\
+      <!-- KPI Row -->\
+      <div class="grid grid-4" style="margin-bottom:20px">\
+        <div class="stat-card cyan">\
+          <div class="stat-icon cyan">\uc0\u55357 \u56522 </div>\
+          <div class="stat-num">47%</div>\
+          <div class="stat-label">Overall Progress</div>\
+          <div class="stat-change up">\uc0\u9650  +12% this week</div>\
+          <div class="progress-track" style="margin-top:12px"><div class="progress-fill pf-cyan" style="width:47%"></div></div>\
+        </div>\
+        <div class="stat-card green">\
+          <div class="stat-icon green">\uc0\u9989 </div>\
+          <div class="stat-num">347</div>\
+          <div class="stat-label">Questions Answered</div>\
+          <div class="stat-change up">\uc0\u9650  +23 today</div>\
+          <div class="progress-track" style="margin-top:12px"><div class="progress-fill pf-green" style="width:69%"></div></div>\
+        </div>\
+        <div class="stat-card amber">\
+          <div class="stat-icon amber">\uc0\u55357 \u56613 </div>\
+          <div class="stat-num">7</div>\
+          <div class="stat-label">Day Streak</div>\
+          <div class="stat-change up">Personal best!</div>\
+        </div>\
+        <div class="stat-card purple">\
+          <div class="stat-icon purple">\uc0\u55356 \u57263 </div>\
+          <div class="stat-num">78%</div>\
+          <div class="stat-label">Avg. Exam Score</div>\
+          <div class="stat-change up">\uc0\u9650  +4% this week</div>\
+        </div>\
+      </div>\
+\
+      <!-- Middle row -->\
+      <div class="grid grid-3-2" style="margin-bottom:20px">\
+\
+        <!-- Domain Progress -->\
+        <div class="card">\
+          <div class="card-header">\
+            <span class="card-title">\uc0\u55357 \u56545  Domain Progress</span>\
+            <button class="card-action" onclick="gotoView('study', document.querySelector('[onclick*=study]'))">View all \uc0\u8594 </button>\
+          </div>\
+          <div class="domain-row">\
+            <div class="domain-dot" style="background:var(--cyan)"></div>\
+            <div class="domain-name">Network Fundamentals</div>\
+            <div class="domain-bar"><div class="progress-track"><div class="progress-fill pf-cyan" style="width:78%"></div></div></div>\
+            <div class="domain-pct">78%</div>\
+          </div>\
+          <div class="domain-row">\
+            <div class="domain-dot" style="background:var(--purple)"></div>\
+            <div class="domain-name">Network Access</div>\
+            <div class="domain-bar"><div class="progress-track"><div class="progress-fill pf-purple" style="width:52%"></div></div></div>\
+            <div class="domain-pct">52%</div>\
+          </div>\
+          <div class="domain-row">\
+            <div class="domain-dot" style="background:var(--green)"></div>\
+            <div class="domain-name">IP Connectivity</div>\
+            <div class="domain-bar"><div class="progress-track"><div class="progress-fill pf-green" style="width:61%"></div></div></div>\
+            <div class="domain-pct">61%</div>\
+          </div>\
+          <div class="domain-row">\
+            <div class="domain-dot" style="background:var(--amber)"></div>\
+            <div class="domain-name">IP Services</div>\
+            <div class="domain-bar"><div class="progress-track"><div class="progress-fill pf-amber" style="width:44%"></div></div></div>\
+            <div class="domain-pct">44%</div>\
+          </div>\
+          <div class="domain-row">\
+            <div class="domain-dot" style="background:var(--red)"></div>\
+            <div class="domain-name">Security Fundamentals</div>\
+            <div class="domain-bar"><div class="progress-track"><div class="progress-fill pf-red" style="width:30%"></div></div></div>\
+            <div class="domain-pct">30%</div>\
+          </div>\
+          <div class="domain-row">\
+            <div class="domain-dot" style="background:#6366f1"></div>\
+            <div class="domain-name">Automation & Prog.</div>\
+            <div class="domain-bar"><div class="progress-track"><div class="progress-fill" style="width:18%;background:#6366f1"></div></div></div>\
+            <div class="domain-pct">18%</div>\
+          </div>\
+        </div>\
+\
+        <!-- Right column -->\
+        <div style="display:flex;flex-direction:column;gap:16px">\
+          <!-- Circular stats -->\
+          <div class="card">\
+            <div class="card-header"><span class="card-title">\uc0\u55357 \u56520  Study Stats</span></div>\
+            <div style="display:flex;justify-content:space-around;align-items:center;padding:8px 0">\
+              <div style="text-align:center">\
+                <div class="ring-wrap">\
+                  <svg width="72" height="72" viewBox="0 0 72 72">\
+                    <circle cx="36" cy="36" r="28" fill="none" stroke="#161e2a" stroke-width="7"/>\
+                    <circle cx="36" cy="36" r="28" fill="none" stroke="#00e5ff" stroke-width="7"\
+                      stroke-dasharray="175.9" stroke-dashoffset="54" stroke-linecap="round" transform="rotate(-90 36 36)"/>\
+                  </svg>\
+                  <div class="ring-label"><div class="ring-num" style="font-size:1rem">69%</div><div class="ring-sub">QUESTIONS</div></div>\
+                </div>\
+                <div style="font-size:0.75rem;color:var(--muted);margin-top:4px">347 done</div>\
+              </div>\
+              <div style="text-align:center">\
+                <div class="ring-wrap">\
+                  <svg width="72" height="72" viewBox="0 0 72 72">\
+                    <circle cx="36" cy="36" r="28" fill="none" stroke="#161e2a" stroke-width="7"/>\
+                    <circle cx="36" cy="36" r="28" fill="none" stroke="#a78bfa" stroke-width="7"\
+                      stroke-dasharray="175.9" stroke-dashoffset="97" stroke-linecap="round" transform="rotate(-90 36 36)"/>\
+                  </svg>\
+                  <div class="ring-label"><div class="ring-num" style="font-size:1rem">45%</div><div class="ring-sub">VIDEOS</div></div>\
+                </div>\
+                <div style="font-size:0.75rem;color:var(--muted);margin-top:4px">22/48</div>\
+              </div>\
+              <div style="text-align:center">\
+                <div class="ring-wrap">\
+                  <svg width="72" height="72" viewBox="0 0 72 72">\
+                    <circle cx="36" cy="36" r="28" fill="none" stroke="#161e2a" stroke-width="7"/>\
+                    <circle cx="36" cy="36" r="28" fill="none" stroke="#00ffa3" stroke-width="7"\
+                      stroke-dasharray="175.9" stroke-dashoffset="123" stroke-linecap="round" transform="rotate(-90 36 36)"/>\
+                  </svg>\
+                  <div class="ring-label"><div class="ring-num" style="font-size:1rem">30%</div><div class="ring-sub">LABS</div></div>\
+                </div>\
+                <div style="font-size:0.75rem;color:var(--muted);margin-top:4px">9/30</div>\
+              </div>\
+            </div>\
+          </div>\
+\
+          <!-- Exam countdown -->\
+          <div class="card" style="background:linear-gradient(135deg,rgba(0,229,255,0.05),rgba(167,139,250,0.05));border-color:rgba(0,229,255,0.15)">\
+            <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--cyan);margin-bottom:8px">Exam Target Date</div>\
+            <div style="font-size:2rem;font-weight:900;color:#fff;line-height:1">42 <span style="font-size:1rem;font-weight:500;color:var(--muted)">days left</span></div>\
+            <div style="font-size:0.78rem;color:var(--muted);margin:8px 0 14px">April 8, 2025 \'b7 Pearson VUE</div>\
+            <div class="progress-track"><div class="progress-fill pf-multi" style="width:40%"></div></div>\
+            <div style="display:flex;justify-content:space-between;font-size:0.7rem;color:var(--muted);margin-top:5px"><span>Started</span><span>40% complete</span><span>Exam day</span></div>\
+          </div>\
+        </div>\
+      </div>\
+\
+      <!-- Bottom row -->\
+      <div class="grid grid-2" style="margin-bottom:20px">\
+        <!-- Recent Activity -->\
+        <div class="card">\
+          <div class="card-header"><span class="card-title">\uc0\u9889  Recent Activity</span><button class="card-action">See all</button></div>\
+          <div class="activity-item">\
+            <div class="act-icon" style="background:var(--cyan-dim);color:var(--cyan)">\uc0\u55357 \u56541 </div>\
+            <div class="act-body">\
+              <div class="act-title">Completed Practice Quiz \'97 Subnetting</div>\
+              <div class="act-sub">Score: 9/10 \'b7 <span style="color:var(--green)">90%</span></div>\
+            </div>\
+            <div class="act-time">2h ago</div>\
+          </div>\
+          <div class="activity-item">\
+            <div class="act-icon" style="background:var(--purple-dim);color:var(--purple)">\uc0\u55356 \u57260 </div>\
+            <div class="act-body">\
+              <div class="act-title">Watched: VLANs & Trunking</div>\
+              <div class="act-sub">35:08 \'b7 Intermediate</div>\
+            </div>\
+            <div class="act-time">5h ago</div>\
+          </div>\
+          <div class="activity-item">\
+            <div class="act-icon" style="background:var(--green-dim);color:var(--green)">\uc0\u55357 \u56741 \u65039 </div>\
+            <div class="act-body">\
+              <div class="act-title">Lab Completed \'97 OSPF Single Area</div>\
+              <div class="act-sub">75 min \'b7 All objectives met</div>\
+            </div>\
+            <div class="act-time">Yesterday</div>\
+          </div>\
+          <div class="activity-item">\
+            <div class="act-icon" style="background:var(--amber-dim);color:var(--amber)">\uc0\u55356 \u56527 </div>\
+            <div class="act-body">\
+              <div class="act-title">Flashcard Session \'97 30 cards</div>\
+              <div class="act-sub">27 correct \'b7 3 needs review</div>\
+            </div>\
+            <div class="act-time">Yesterday</div>\
+          </div>\
+          <div class="activity-item">\
+            <div class="act-icon" style="background:var(--red-dim);color:var(--red)">\uc0\u55357 \u56523 </div>\
+            <div class="act-body">\
+              <div class="act-title">Reviewed ACLs Cheat Sheet</div>\
+              <div class="act-sub">Security domain</div>\
+            </div>\
+            <div class="act-time">2d ago</div>\
+          </div>\
+        </div>\
+\
+        <!-- Study Heatmap + Next Up -->\
+        <div style="display:flex;flex-direction:column;gap:16px">\
+          <div class="card">\
+            <div class="card-header"><span class="card-title">\uc0\u55357 \u56518  Study Heatmap</span><span style="font-size:0.72rem;color:var(--muted)">Last 28 days</span></div>\
+            <div class="heatmap" id="heatmap"></div>\
+            <div style="display:flex;align-items:center;gap:6px;margin-top:10px;font-size:0.68rem;color:var(--muted)">\
+              <span>Less</span>\
+              <div style="width:10px;height:10px;border-radius:2px;background:var(--elevated)"></div>\
+              <div style="width:10px;height:10px;border-radius:2px;background:rgba(0,229,255,0.25)"></div>\
+              <div style="width:10px;height:10px;border-radius:2px;background:rgba(0,229,255,0.5)"></div>\
+              <div style="width:10px;height:10px;border-radius:2px;background:var(--cyan)"></div>\
+              <span>More</span>\
+            </div>\
+          </div>\
+          <div class="card">\
+            <div class="card-header"><span class="card-title">\uc0\u55356 \u57263  Continue Learning</span></div>\
+            <div class="topic-row" onclick="gotoView('study',document.querySelector('[onclick*=study]'))">\
+              <div class="topic-emoji">\uc0\u55357 \u57057 \u65039 </div>\
+              <div class="topic-info">\
+                <div class="topic-name">ACLs Standard & Extended</div>\
+                <div class="topic-hint">Security \'b7 35 min read</div>\
+              </div>\
+              <div class="topic-right">\
+                <div style="font-size:0.72rem;color:var(--amber)">In progress</div>\
+                <div style="font-size:0.9rem">\uc0\u8594 </div>\
+              </div>\
+            </div>\
+            <div class="topic-row" onclick="gotoView('labs',document.querySelector('[onclick*=labs]'))">\
+              <div class="topic-emoji">\uc0\u55357 \u56826 \u65039 </div>\
+              <div class="topic-info">\
+                <div class="topic-name">OSPF Single Area Lab</div>\
+                <div class="topic-hint">Virtual Lab \'b7 75 min</div>\
+              </div>\
+              <div class="topic-right">\
+                <div style="font-size:0.72rem;color:var(--muted)">Not started</div>\
+                <div style="font-size:0.9rem">\uc0\u8594 </div>\
+              </div>\
+            </div>\
+          </div>\
+        </div>\
+      </div>\
+    </div>\
+\
+    <!-- ================================================\
+         STUDY VIEW\
+    ================================================ -->\
+    <div class="view" id="view-study">\
+      <div class="tab-bar" id="studyTabs">\
+        <button class="tab-btn active" onclick="switchStudyTab('fundamentals',this)">Network Fundamentals</button>\
+        <button class="tab-btn" onclick="switchStudyTab('access',this)">Network Access</button>\
+        <button class="tab-btn" onclick="switchStudyTab('ip',this)">IP Connectivity</button>\
+        <button class="tab-btn" onclick="switchStudyTab('services',this)">IP Services</button>\
+        <button class="tab-btn" onclick="switchStudyTab('security',this)">Security</button>\
+        <button class="tab-btn" onclick="switchStudyTab('automation',this)">Automation</button>\
+      </div>\
+\
+      <div id="stab-fundamentals" class="tab-content active">\
+        <div class="grid grid-2" style="margin-bottom:16px">\
+          <div class="card">\
+            <div class="card-header"><span class="card-title">\uc0\u55357 \u56522  Domain Overview</span></div>\
+            <div style="font-size:2.5rem;font-weight:900;color:var(--cyan)">78%</div>\
+            <div style="font-size:0.78rem;color:var(--muted);margin-bottom:12px">20% of the CCNA exam</div>\
+            <div class="progress-track" style="height:8px"><div class="progress-fill pf-cyan" style="width:78%"></div></div>\
+          </div>\
+          <div class="card" style="display:flex;flex-direction:column;justify-content:space-between">\
+            <div class="card-title" style="margin-bottom:12px">\uc0\u55357 \u56524  Key Topics</div>\
+            <div style="display:flex;flex-wrap:wrap;gap:6px">\
+              <span class="tag tag-cyan">OSI Model</span>\
+              <span class="tag tag-cyan">IPv4/IPv6</span>\
+              <span class="tag tag-amber">Subnetting</span>\
+              <span class="tag tag-green">Ethernet</span>\
+              <span class="tag tag-purple">TCP/UDP</span>\
+              <span class="tag tag-red">CIDR</span>\
+            </div>\
+          </div>\
+        </div>\
+        <div id="study-topics-fundamentals">\
+          <div class="topic-row"><div class="topic-emoji">\uc0\u55356 \u57104 </div><div class="topic-info"><div class="topic-name">OSI vs TCP/IP Model</div><div class="topic-hint">15 min read \'b7 Foundational</div></div><div class="topic-right"><span class="tag tag-cyan">Core</span><div class="progress-track" style="width:80px"><div class="progress-fill pf-cyan" style="width:100%"></div></div></div></div>\
+          <div class="topic-row"><div class="topic-emoji">\uc0\u55357 \u56545 </div><div class="topic-info"><div class="topic-name">Ethernet & MAC Addressing</div><div class="topic-hint">20 min read \'b7 4 questions</div></div><div class="topic-right"><span class="tag tag-amber">Hot</span><div class="progress-track" style="width:80px"><div class="progress-fill pf-amber" style="width:80%"></div></div></div></div>\
+          <div class="topic-row"><div class="topic-emoji">\uc0\u55357 \u56610 </div><div class="topic-info"><div class="topic-name">IPv4 Addressing & Subnetting</div><div class="topic-hint">45 min read \'b7 12 questions</div></div><div class="topic-right"><span class="tag tag-cyan">Core</span><div class="progress-track" style="width:80px"><div class="progress-fill pf-cyan" style="width:60%"></div></div></div></div>\
+          <div class="topic-row"><div class="topic-emoji">\uc0\u55357 \u56522 </div><div class="topic-info"><div class="topic-name">IPv6 Fundamentals</div><div class="topic-hint">30 min read \'b7 6 questions</div></div><div class="topic-right"><span class="tag tag-green">New</span><div class="progress-track" style="width:80px"><div class="progress-fill pf-green" style="width:30%"></div></div></div></div>\
+          <div class="topic-row"><div class="topic-emoji">\uc0\u55357 \u56580 </div><div class="topic-info"><div class="topic-name">TCP vs UDP</div><div class="topic-hint">12 min read \'b7 3 questions</div></div><div class="topic-right"><span class="tag tag-cyan">Core</span><div class="progress-track" style="width:80px"><div class="progress-fill pf-cyan" style="width:100%"></div></div></div></div>\
+          <div class="topic-row"><div class="topic-emoji">\uc0\u55356 \u57303 \u65039 </div><div class="topic-info"><div class="topic-name">Network Topologies</div><div class="topic-hint">18 min read \'b7 3 questions</div></div><div class="topic-right"><span class="tag tag-amber">Hot</span><div class="progress-track" style="width:80px"><div class="progress-fill pf-amber" style="width:50%"></div></div></div></div>\
+        </div>\
+      </div>\
+\
+      <div id="stab-access" class="tab-content">\
+        <div class="topic-row"><div class="topic-emoji">\uc0\u55357 \u56576 </div><div class="topic-info"><div class="topic-name">VLANs & Trunking (802.1Q)</div><div class="topic-hint">35 min read \'b7 8 questions</div></div><div class="topic-right"><span class="tag tag-cyan">Core</span></div></div>\
+        <div class="topic-row"><div class="topic-emoji">\uc0\u55356 \u57097 </div><div class="topic-info"><div class="topic-name">Spanning Tree Protocol (STP)</div><div class="topic-hint">30 min read \'b7 6 questions</div></div><div class="topic-right"><span class="tag tag-amber">Hot</span></div></div>\
+        <div class="topic-row"><div class="topic-emoji">\uc0\u55357 \u56566 </div><div class="topic-info"><div class="topic-name">Wireless LAN Fundamentals</div><div class="topic-hint">25 min read \'b7 5 questions</div></div><div class="topic-right"><span class="tag tag-green">New</span></div></div>\
+        <div class="topic-row"><div class="topic-emoji">\uc0\u9889 </div><div class="topic-info"><div class="topic-name">EtherChannel & LACP</div><div class="topic-hint">20 min read \'b7 4 questions</div></div><div class="topic-right"><span class="tag tag-cyan">Core</span></div></div>\
+      </div>\
+\
+      <div id="stab-ip" class="tab-content">\
+        <div class="topic-row"><div class="topic-emoji">\uc0\u55357 \u56826 \u65039 </div><div class="topic-info"><div class="topic-name">Static Routing</div><div class="topic-hint">20 min read \'b7 5 questions</div></div><div class="topic-right"><span class="tag tag-cyan">Core</span></div></div>\
+        <div class="topic-row"><div class="topic-emoji">\uc0\u55357 \u56576 </div><div class="topic-info"><div class="topic-name">OSPF Single Area</div><div class="topic-hint">40 min read \'b7 10 questions</div></div><div class="topic-right"><span class="tag tag-amber">Hot</span></div></div>\
+        <div class="topic-row"><div class="topic-emoji">\uc0\u55356 \u57312 </div><div class="topic-info"><div class="topic-name">First-Hop Redundancy (HSRP)</div><div class="topic-hint">18 min read \'b7 4 questions</div></div><div class="topic-right"><span class="tag tag-green">New</span></div></div>\
+        <div class="topic-row"><div class="topic-emoji">\uc0\u55357 \u56589 </div><div class="topic-info"><div class="topic-name">IP Routing Concepts</div><div class="topic-hint">22 min read \'b7 5 questions</div></div><div class="topic-right"><span class="tag tag-cyan">Core</span></div></div>\
+      </div>\
+\
+      <div id="stab-services" class="tab-content">\
+        <div class="topic-row"><div class="topic-emoji">\uc0\u55357 \u56594 </div><div class="topic-info"><div class="topic-name">NAT & PAT</div><div class="topic-hint">25 min read \'b7 6 questions</div></div><div class="topic-right"><span class="tag tag-cyan">Core</span></div></div>\
+        <div class="topic-row"><div class="topic-emoji">\uc0\u9200 </div><div class="topic-info"><div class="topic-name">DHCP Configuration</div><div class="topic-hint">15 min read \'b7 3 questions</div></div><div class="topic-right"><span class="tag tag-amber">Hot</span></div></div>\
+        <div class="topic-row"><div class="topic-emoji">\uc0\u55356 \u57101 </div><div class="topic-info"><div class="topic-name">DNS Fundamentals</div><div class="topic-hint">12 min read \'b7 3 questions</div></div><div class="topic-right"><span class="tag tag-green">New</span></div></div>\
+        <div class="topic-row"><div class="topic-emoji">\uc0\u55357 \u56545 </div><div class="topic-info"><div class="topic-name">NTP Configuration</div><div class="topic-hint">10 min read \'b7 2 questions</div></div><div class="topic-right"><span class="tag tag-cyan">Core</span></div></div>\
+      </div>\
+\
+      <div id="stab-security" class="tab-content">\
+        <div class="topic-row"><div class="topic-emoji">\uc0\u55357 \u57057 \u65039 </div><div class="topic-info"><div class="topic-name">ACLs Standard & Extended</div><div class="topic-hint">35 min read \'b7 9 questions</div></div><div class="topic-right"><span class="tag tag-cyan">Core</span></div></div>\
+        <div class="topic-row"><div class="topic-emoji">\uc0\u55357 \u56592 </div><div class="topic-info"><div class="topic-name">Port Security</div><div class="topic-hint">15 min read \'b7 4 questions</div></div><div class="topic-right"><span class="tag tag-amber">Hot</span></div></div>\
+        <div class="topic-row"><div class="topic-emoji">\uc0\u55357 \u56593 </div><div class="topic-info"><div class="topic-name">AAA & RADIUS</div><div class="topic-hint">20 min read \'b7 4 questions</div></div><div class="topic-right"><span class="tag tag-green">New</span></div></div>\
+        <div class="topic-row"><div class="topic-emoji">\uc0\u55357 \u56595 </div><div class="topic-info"><div class="topic-name">VPN Concepts</div><div class="topic-hint">25 min read \'b7 5 questions</div></div><div class="topic-right"><span class="tag tag-cyan">Core</span></div></div>\
+      </div>\
+\
+      <div id="stab-automation" class="tab-content">\
+        <div class="topic-row"><div class="topic-emoji">\uc0\u55358 \u56598 </div><div class="topic-info"><div class="topic-name">Network Automation Overview</div><div class="topic-hint">20 min read \'b7 4 questions</div></div><div class="topic-right"><span class="tag tag-green">New</span></div></div>\
+        <div class="topic-row"><div class="topic-emoji">\uc0\u55357 \u56599 </div><div class="topic-info"><div class="topic-name">REST APIs & JSON</div><div class="topic-hint">25 min read \'b7 5 questions</div></div><div class="topic-right"><span class="tag tag-amber">Hot</span></div></div>\
+        <div class="topic-row"><div class="topic-emoji">\uc0\u55357 \u56550 </div><div class="topic-info"><div class="topic-name">Ansible for Networks</div><div class="topic-hint">30 min read \'b7 6 questions</div></div><div class="topic-right"><span class="tag tag-green">New</span></div></div>\
+        <div class="topic-row"><div class="topic-emoji">\uc0\u55356 \u57314 </div><div class="topic-info"><div class="topic-name">SD-WAN Fundamentals</div><div class="topic-hint">18 min read \'b7 3 questions</div></div><div class="topic-right"><span class="tag tag-cyan">Core</span></div></div>\
+      </div>\
+    </div>\
+\
+    <!-- ================================================\
+         EXAM VIEW\
+    ================================================ -->\
+    <div class="view" id="view-exam">\
+      <div class="quiz-wrap">\
+        <div id="quiz-active">\
+          <!-- Progress -->\
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">\
+            <div class="progress-track" style="flex:1;height:8px"><div class="progress-fill pf-multi" id="q-bar" style="width:10%"></div></div>\
+            <span style="font-size:0.78rem;color:var(--muted);font-family:var(--mono);white-space:nowrap" id="q-counter">1 / 10</span>\
+          </div>\
+\
+          <!-- Question -->\
+          <div class="card" style="margin-bottom:16px">\
+            <div class="quiz-meta">\
+              <span class="tag tag-cyan" id="q-domain">Network Fundamentals</span>\
+              <span style="font-size:0.72rem;color:var(--muted)">Single Choice</span>\
+            </div>\
+            <div class="quiz-q-text" id="q-text"></div>\
+            <div class="quiz-feedback" id="q-feedback"></div>\
+            <div class="quiz-options" id="q-opts"></div>\
+            <div class="quiz-controls">\
+              <button class="btn btn-cyan" id="q-next-btn" onclick="nextQ()" style="display:none">Next \uc0\u8594 </button>\
+              <span style="font-size:0.78rem;color:var(--muted);margin-left:auto" id="q-score-live">Score: 0</span>\
+            </div>\
+          </div>\
+        </div>\
+\
+        <div id="quiz-result" style="display:none">\
+          <div class="card quiz-score-view">\
+            <div style="font-size:2.5rem;margin-bottom:12px">\uc0\u55356 \u57235 </div>\
+            <div class="ring-wrap" style="margin-bottom:16px">\
+              <svg width="120" height="120" viewBox="0 0 120 120">\
+                <circle cx="60" cy="60" r="50" fill="none" stroke="#161e2a" stroke-width="10"/>\
+                <circle cx="60" cy="60" r="50" fill="none" stroke="#00e5ff" stroke-width="10"\
+                  stroke-dasharray="314.15" id="result-ring" stroke-dashoffset="314" stroke-linecap="round" transform="rotate(-90 60 60)"/>\
+              </svg>\
+              <div class="ring-label">\
+                <div class="ring-num" id="result-pct" style="font-size:1.6rem">\'97</div>\
+                <div class="ring-sub">SCORE</div>\
+              </div>\
+            </div>\
+            <div class="score-grade" id="result-grade">\'97</div>\
+            <div class="score-sub" id="result-msg">\'97</div>\
+            <div style="display:flex;gap:10px;justify-content:center;margin-top:20px">\
+              <button class="btn btn-cyan" onclick="restartQ()">\uc0\u8634  Retake</button>\
+              <button class="btn btn-outline" onclick="gotoView('study',document.querySelector('[onclick*=study]'))">\uc0\u55357 \u56534  Review</button>\
+            </div>\
+          </div>\
+        </div>\
+      </div>\
+    </div>\
+\
+    <!-- ================================================\
+         FLASHCARDS VIEW\
+    ================================================ -->\
+    <div class="view" id="view-flashcards">\
+      <div class="grid grid-4" style="margin-bottom:20px">\
+        <div class="stat-card cyan"><div class="stat-icon cyan">\uc0\u55356 \u56527 </div><div class="stat-num">300<span style="font-size:1rem">+</span></div><div class="stat-label">Total Cards</div></div>\
+        <div class="stat-card green"><div class="stat-icon green">\uc0\u9989 </div><div class="stat-num">147</div><div class="stat-label">Mastered</div></div>\
+        <div class="stat-card amber"><div class="stat-icon amber">\uc0\u55357 \u56580 </div><div class="stat-num">89</div><div class="stat-label">Reviewing</div></div>\
+        <div class="stat-card red"><div class="stat-icon red">\uc0\u55357 \u56524 </div><div class="stat-num">64</div><div class="stat-label">New</div></div>\
+      </div>\
+\
+      <div class="fc-outer">\
+        <div class="fc-inner" id="fc-card" onclick="fcFlip()">\
+          <div class="fc-face front">\
+            <div class="fc-chip">Question</div>\
+            <div class="fc-text" id="fc-q-text">What is the default administrative distance of OSPF?</div>\
+            <div class="fc-hint">Click to reveal answer \uc0\u8593 </div>\
+          </div>\
+          <div class="fc-face back">\
+            <div class="fc-chip">Answer</div>\
+            <div class="fc-text" id="fc-a-text">110 \'97 Lower than RIP (120), higher than EIGRP (90). Administrative distances determine route preference when multiple protocols know about the same destination.</div>\
+          </div>\
+        </div>\
+      </div>\
+\
+      <div class="fc-controls">\
+        <div class="fc-nav">\
+          <button class="btn btn-ghost btn-sm" onclick="fcPrev()">\uc0\u8592  Prev</button>\
+          <span style="font-size:0.875rem;font-weight:700;color:var(--muted);align-self:center;min-width:50px;text-align:center" id="fc-counter">1 / 8</span>\
+          <button class="btn btn-ghost btn-sm" onclick="fcNext()">Next \uc0\u8594 </button>\
+        </div>\
+        <div class="fc-rating">\
+          <button class="btn btn-sm" style="background:var(--red-dim);color:var(--red);border:1px solid rgba(255,77,109,0.2)" onclick="fcRate('hard')">\uc0\u10007  Hard</button>\
+          <button class="btn btn-sm" style="background:var(--amber-dim);color:var(--amber);border:1px solid rgba(255,184,48,0.2)" onclick="fcRate('ok')">~ OK</button>\
+          <button class="btn btn-sm" style="background:var(--green-dim);color:var(--green);border:1px solid rgba(0,255,163,0.2)" onclick="fcRate('easy')">\uc0\u10003  Easy</button>\
+        </div>\
+      </div>\
+    </div>\
+\
+    <!-- ================================================\
+         VIDEOS VIEW\
+    ================================================ -->\
+    <div class="view" id="view-videos">\
+      <div class="tab-bar">\
+        <button class="tab-btn active" onclick="switchVideoTab('all',this)">All Videos</button>\
+        <button class="tab-btn" onclick="switchVideoTab('beginner',this)">Beginner</button>\
+        <button class="tab-btn" onclick="switchVideoTab('intermediate',this)">Intermediate</button>\
+        <button class="tab-btn" onclick="switchVideoTab('advanced',this)">Advanced</button>\
+      </div>\
+      <div id="vtab-all" class="tab-content active">\
+        <div class="grid grid-3">\
+          <div class="video-thumb-card" onclick="openModal('OSI Model Deep Dive','Complete walkthrough of all 7 OSI layers with real-world protocol examples and packet analysis.')"><div class="vt-thumb" style="background:linear-gradient(135deg,#07090f,#0d1117)"><div class="vt-bg">\uc0\u55356 \u57104 </div><div class="vt-play">\u9654 </div><div class="vt-dur">18:45</div></div><div class="vt-info"><div class="vt-title">OSI Model Deep Dive</div><div class="vt-meta"><span class="tag tag-green" style="font-size:0.65rem">Beginner</span><span>18:45</span><span>\u9733  4.9</span></div></div></div>\
+          <div class="video-thumb-card" onclick="openModal('Subnetting Mastery','Master IPv4 subnetting from scratch \'97 CIDR, VLSM, and the magic number method.')"><div class="vt-thumb" style="background:linear-gradient(135deg,#07090f,#0d1117)"><div class="vt-bg">\uc0\u55357 \u56610 </div><div class="vt-play">\u9654 </div><div class="vt-dur">42:12</div></div><div class="vt-info"><div class="vt-title">Subnetting Mastery</div><div class="vt-meta"><span class="tag tag-amber" style="font-size:0.65rem">Intermediate</span><span>42:12</span><span>\u9733  4.8</span></div></div></div>\
+          <div class="video-thumb-card" onclick="openModal('VLANs & Trunking','Configure VLANs, trunk links (802.1Q), and inter-VLAN routing with Router-on-a-Stick.')"><div class="vt-thumb" style="background:linear-gradient(135deg,#07090f,#0d1117)"><div class="vt-bg">\uc0\u55357 \u56576 </div><div class="vt-play">\u9654 </div><div class="vt-dur">35:08</div></div><div class="vt-info"><div class="vt-title">VLANs & Trunking</div><div class="vt-meta"><span class="tag tag-amber" style="font-size:0.65rem">Intermediate</span><span>35:08</span><span>\u9733  4.9</span></div></div></div>\
+          <div class="video-thumb-card" onclick="openModal('OSPF Single Area','Deploy and troubleshoot OSPF on Cisco IOS routers. Covers adjacency, LSA types, and SPF.')"><div class="vt-thumb" style="background:linear-gradient(135deg,#07090f,#0d1117)"><div class="vt-bg">\uc0\u55357 \u56826 \u65039 </div><div class="vt-play">\u9654 </div><div class="vt-dur">54:30</div></div><div class="vt-info"><div class="vt-title">OSPF Configuration</div><div class="vt-meta"><span class="tag tag-red" style="font-size:0.65rem">Advanced</span><span>54:30</span><span>\u9733  4.7</span></div></div></div>\
+          <div class="video-thumb-card" onclick="openModal('ACLs Explained','Standard and extended ACLs \'97 write, apply, and verify packet filtering rules.')"><div class="vt-thumb" style="background:linear-gradient(135deg,#07090f,#0d1117)"><div class="vt-bg">\uc0\u55357 \u57057 \u65039 </div><div class="vt-play">\u9654 </div><div class="vt-dur">29:17</div></div><div class="vt-info"><div class="vt-title">ACLs Explained</div><div class="vt-meta"><span class="tag tag-amber" style="font-size:0.65rem">Intermediate</span><span>29:17</span><span>\u9733  4.8</span></div></div></div>\
+          <div class="video-thumb-card" onclick="openModal('NAT & PAT','Network Address Translation \'97 static, dynamic, and overload (PAT) with live configuration.')"><div class="vt-thumb" style="background:linear-gradient(135deg,#07090f,#0d1117)"><div class="vt-bg">\uc0\u55357 \u56594 </div><div class="vt-play">\u9654 </div><div class="vt-dur">23:44</div></div><div class="vt-info"><div class="vt-title">NAT & PAT</div><div class="vt-meta"><span class="tag tag-amber" style="font-size:0.65rem">Intermediate</span><span>23:44</span><span>\u9733  4.6</span></div></div></div>\
+        </div>\
+      </div>\
+    </div>\
+\
+    <!-- ================================================\
+         LABS VIEW\
+    ================================================ -->\
+    <div class="view" id="view-labs">\
+      <div class="grid grid-4" style="margin-bottom:20px">\
+        <div class="stat-card cyan"><div class="stat-icon cyan">\uc0\u55357 \u56741 \u65039 </div><div class="stat-num">30</div><div class="stat-label">Total Labs</div></div>\
+        <div class="stat-card green"><div class="stat-icon green">\uc0\u9989 </div><div class="stat-num">9</div><div class="stat-label">Completed</div></div>\
+        <div class="stat-card amber"><div class="stat-icon amber">\uc0\u9889 </div><div class="stat-num">3</div><div class="stat-label">In Progress</div></div>\
+        <div class="stat-card purple"><div class="stat-icon purple">\uc0\u9201 \u65039 </div><div class="stat-num">18</div><div class="stat-label">Remaining</div></div>\
+      </div>\
+      <div style="display:flex;flex-direction:column;gap:10px">\
+        <div class="lab-row"><div class="lab-thumb" style="background:var(--cyan-dim)">\uc0\u55357 \u56741 \u65039 </div><div class="lab-body"><div class="lab-name">Basic Switch Configuration</div><div class="lab-desc">Hostname, passwords, VLANs, port security on Catalyst switch</div><div class="lab-meta"><span class="tag tag-green" style="font-size:0.65rem">Beginner</span><span style="font-size:0.72rem;color:var(--muted)">\u9201  45 min</span></div></div><div class="lab-actions"><span class="tag tag-green">\u10003  Done</span><button class="btn btn-ghost btn-sm">\u8634  Redo</button></div></div>\
+        <div class="lab-row"><div class="lab-thumb" style="background:var(--purple-dim)">\uc0\u55357 \u56576 </div><div class="lab-body"><div class="lab-name">VLAN & Trunk Lab</div><div class="lab-desc">Inter-VLAN routing with Router-on-a-Stick, 802.1Q tagging</div><div class="lab-meta"><span class="tag tag-amber" style="font-size:0.65rem">Intermediate</span><span style="font-size:0.72rem;color:var(--muted)">\u9201  60 min</span></div></div><div class="lab-actions"><span class="tag tag-amber">In Progress</span><button class="btn btn-cyan btn-sm" onclick="openLabModal('VLAN & Trunk Lab','Create VLANs, configure trunk links, and set up Router-on-a-Stick inter-VLAN routing.')">Continue \u8594 </button></div></div>\
+        <div class="lab-row"><div class="lab-thumb" style="background:var(--green-dim)">\uc0\u55357 \u56826 \u65039 </div><div class="lab-body"><div class="lab-name">OSPF Single Area Lab</div><div class="lab-desc">Deploy OSPF across 3-router topology, verify adjacencies and routing tables</div><div class="lab-meta"><span class="tag tag-amber" style="font-size:0.65rem">Intermediate</span><span style="font-size:0.72rem;color:var(--muted)">\u9201  75 min</span></div></div><div class="lab-actions"><button class="btn btn-outline btn-sm" onclick="openLabModal('OSPF Single Area Lab','Deploy OSPF and verify adjacency tables on a 3-router topology.')">Launch \u8594 </button></div></div>\
+        <div class="lab-row"><div class="lab-thumb" style="background:var(--amber-dim)">\uc0\u55357 \u57057 \u65039 </div><div class="lab-body"><div class="lab-name">ACL Configuration Lab</div><div class="lab-desc">Write standard and extended ACLs, apply inbound and outbound</div><div class="lab-meta"><span class="tag tag-amber" style="font-size:0.65rem">Intermediate</span><span style="font-size:0.72rem;color:var(--muted)">\u9201  50 min</span></div></div><div class="lab-actions"><button class="btn btn-outline btn-sm" onclick="openLabModal('ACL Lab','Apply standard and extended access lists to filter traffic by source IP and destination port.')">Launch \u8594 </button></div></div>\
+        <div class="lab-row"><div class="lab-thumb" style="background:var(--red-dim)">\uc0\u55357 \u56580 </div><div class="lab-body"><div class="lab-name">DHCP & NAT Lab</div><div class="lab-desc">Router as DHCP server, NAT overload (PAT) for internet access</div><div class="lab-meta"><span class="tag tag-amber" style="font-size:0.65rem">Intermediate</span><span style="font-size:0.72rem;color:var(--muted)">\u9201  55 min</span></div></div><div class="lab-actions"><button class="btn btn-outline btn-sm" onclick="openLabModal('DHCP & NAT Lab','Configure DHCP scope and PAT overload on a Cisco router.')">Launch \u8594 </button></div></div>\
+        <div class="lab-row"><div class="lab-thumb" style="background:var(--cyan-dim)">\uc0\u55356 \u57097 </div><div class="lab-body"><div class="lab-name">Spanning Tree Lab</div><div class="lab-desc">Root bridge election, port states, and STP topology manipulation</div><div class="lab-meta"><span class="tag tag-red" style="font-size:0.65rem">Advanced</span><span style="font-size:0.72rem;color:var(--muted)">\u9201  40 min</span></div></div><div class="lab-actions"><button class="btn btn-outline btn-sm" onclick="openLabModal('STP Lab','Observe root bridge election and manipulate Spanning Tree to control traffic paths.')">Launch \u8594 </button></div></div>\
+      </div>\
+    </div>\
+\
+    <!-- ================================================\
+         CHEAT SHEETS VIEW\
+    ================================================ -->\
+    <div class="view" id="view-cheatsheets">\
+      <div class="grid grid-3">\
+        <div class="card"><div class="card-title" style="margin-bottom:14px">\uc0\u55357 \u56522  OSI Model Layers</div><table class="ref-table"><thead><tr><th>Layer</th><th>Name</th><th>Protocol/Unit</th></tr></thead><tbody><tr><td>7</td><td>Application</td><td>HTTP, FTP, DNS</td></tr><tr><td>6</td><td>Presentation</td><td>TLS, JPEG</td></tr><tr><td>5</td><td>Session</td><td>NetBIOS, RPC</td></tr><tr><td>4</td><td>Transport</td><td class="mono">TCP / UDP</td></tr><tr><td>3</td><td>Network</td><td class="mono">IP (Packet)</td></tr><tr><td>2</td><td>Data Link</td><td class="mono">MAC (Frame)</td></tr><tr><td>1</td><td>Physical</td><td>Bits, Cable</td></tr></tbody></table></div>\
+        <div class="card"><div class="card-title" style="margin-bottom:14px">\uc0\u55357 \u56588  Common Port Numbers</div><table class="ref-table"><thead><tr><th>Protocol</th><th>Port</th><th>Transport</th></tr></thead><tbody><tr><td>FTP</td><td class="mono">20, 21</td><td>TCP</td></tr><tr><td>SSH</td><td class="mono">22</td><td>TCP</td></tr><tr><td>Telnet</td><td class="mono">23</td><td>TCP</td></tr><tr><td>SMTP</td><td class="mono">25</td><td>TCP</td></tr><tr><td>DNS</td><td class="mono">53</td><td>TCP/UDP</td></tr><tr><td>HTTP</td><td class="mono">80</td><td>TCP</td></tr><tr><td>HTTPS</td><td class="mono">443</td><td>TCP</td></tr><tr><td>SNMP</td><td class="mono">161</td><td>UDP</td></tr></tbody></table></div>\
+        <div class="card"><div class="card-title" style="margin-bottom:14px">\uc0\u55357 \u56826 \u65039  Admin Distances</div><table class="ref-table"><thead><tr><th>Source</th><th>AD</th></tr></thead><tbody><tr><td>Connected</td><td class="mono" style="color:var(--green)">0</td></tr><tr><td>Static Route</td><td class="mono">1</td></tr><tr><td>EIGRP Internal</td><td class="mono">90</td></tr><tr><td>OSPF</td><td class="mono" style="color:var(--cyan)">110</td></tr><tr><td>IS-IS</td><td class="mono">115</td></tr><tr><td>RIP</td><td class="mono">120</td></tr><tr><td>External EIGRP</td><td class="mono">170</td></tr><tr><td>Unknown</td><td class="mono" style="color:var(--red)">255</td></tr></tbody></table></div>\
+        <div class="card"><div class="card-title" style="margin-bottom:14px">\uc0\u55357 \u56507  Key IOS Commands</div><table class="ref-table"><thead><tr><th>Purpose</th><th>Command</th></tr></thead><tbody><tr><td>Routing table</td><td class="mono">sh ip route</td></tr><tr><td>Interface brief</td><td class="mono">sh ip int br</td></tr><tr><td>VLAN list</td><td class="mono">sh vlan br</td></tr><tr><td>STP overview</td><td class="mono">sh span</td></tr><tr><td>OSPF neighbors</td><td class="mono">sh ip ospf nei</td></tr><tr><td>ARP table</td><td class="mono">sh ip arp</td></tr><tr><td>Save config</td><td class="mono">wr mem</td></tr></tbody></table></div>\
+        <div class="card"><div class="card-title" style="margin-bottom:14px">\uc0\u55357 \u56610  Subnet Reference</div><table class="ref-table"><thead><tr><th>CIDR</th><th>Mask</th><th>Hosts</th></tr></thead><tbody><tr><td class="mono">/24</td><td class="mono">255.255.255.0</td><td>254</td></tr><tr><td class="mono">/25</td><td class="mono">255.255.255.128</td><td>126</td></tr><tr><td class="mono">/26</td><td class="mono">255.255.255.192</td><td>62</td></tr><tr><td class="mono">/27</td><td class="mono">255.255.255.224</td><td>30</td></tr><tr><td class="mono">/28</td><td class="mono">255.255.255.240</td><td>14</td></tr><tr><td class="mono">/29</td><td class="mono">255.255.255.248</td><td>6</td></tr><tr><td class="mono">/30</td><td class="mono">255.255.255.252</td><td>2</td></tr></tbody></table></div>\
+        <div class="card"><div class="card-title" style="margin-bottom:14px">\uc0\u55356 \u57335 \u65039  Ethernet Standards</div><table class="ref-table"><thead><tr><th>Standard</th><th>Speed</th><th>Medium</th></tr></thead><tbody><tr><td class="mono">10BASE-T</td><td>10 Mbps</td><td>Cat3</td></tr><tr><td class="mono">100BASE-TX</td><td>100 Mbps</td><td>Cat5</td></tr><tr><td class="mono">1000BASE-T</td><td>1 Gbps</td><td>Cat5e</td></tr><tr><td class="mono">1000BASE-SX</td><td>1 Gbps</td><td>MM Fiber</td></tr><tr><td class="mono">1000BASE-LX</td><td>1 Gbps</td><td>SM Fiber</td></tr><tr><td class="mono">10GBASE-T</td><td>10 Gbps</td><td>Cat6a</td></tr></tbody></table></div>\
+      </div>\
+    </div>\
+\
+    <!-- ================================================\
+         TOOLS VIEW\
+    ================================================ -->\
+    <div class="view" id="view-tools">\
+      <div class="grid grid-3">\
+        <div class="tool-block">\
+          <div class="card-title" style="margin-bottom:16px">\uc0\u55357 \u56610  Subnet Calculator</div>\
+          <div class="tool-label">IPv4 Address</div>\
+          <input class="tool-input" id="t-ip" placeholder="192.168.1.0"/>\
+          <div class="tool-label">CIDR Prefix Length</div>\
+          <input class="tool-input" id="t-pfx" type="number" min="1" max="30" placeholder="24"/>\
+          <button class="btn btn-cyan btn-sm" onclick="doSubnet()">Calculate</button>\
+          <div class="tool-result" id="r-subnet"></div>\
+        </div>\
+        <div class="tool-block">\
+          <div class="card-title" style="margin-bottom:16px">\uc0\u55357 \u56576  Wildcard Mask Converter</div>\
+          <div class="tool-label">Subnet Mask</div>\
+          <input class="tool-input" id="t-wc" placeholder="255.255.255.0"/>\
+          <button class="btn btn-cyan btn-sm" onclick="doWildcard()">Convert</button>\
+          <div class="tool-result" id="r-wc"></div>\
+        </div>\
+        <div class="tool-block">\
+          <div class="card-title" style="margin-bottom:16px">\uc0\u55357 \u56481  Binary IP Converter</div>\
+          <div class="tool-label">IPv4 Address</div>\
+          <input class="tool-input" id="t-bin" placeholder="192.168.10.1"/>\
+          <button class="btn btn-cyan btn-sm" onclick="doBinary()">Convert</button>\
+          <div class="tool-result" id="r-bin"></div>\
+        </div>\
+      </div>\
+    </div>\
+\
+    <!-- ================================================\
+         PLANNER VIEW\
+    ================================================ -->\
+    <div class="view" id="view-planner">\
+      <div class="grid grid-2-1">\
+        <div>\
+          <!-- Week -->\
+          <div class="card" style="margin-bottom:16px">\
+            <div class="card-title" style="margin-bottom:14px">\uc0\u55357 \u56518  This Week</div>\
+            <div class="week-row" id="weekRow"></div>\
+            <div id="task-list">\
+              <div class="task-item"><div class="task-cb done" onclick="toggleCb(this)">\uc0\u10003 </div><div class="task-label done">Review OSI Model layers</div><div class="task-time">09:00</div></div>\
+              <div class="task-item"><div class="task-cb done" onclick="toggleCb(this)">\uc0\u10003 </div><div class="task-label done">Complete subnetting exercises</div><div class="task-time">10:30</div></div>\
+              <div class="task-item"><div class="task-cb" onclick="toggleCb(this)"></div><div class="task-label">Watch VLANs video tutorial</div><div class="task-time">14:00</div></div>\
+              <div class="task-item"><div class="task-cb" onclick="toggleCb(this)"></div><div class="task-label">Practice 20 flashcards</div><div class="task-time">16:00</div></div>\
+              <div class="task-item"><div class="task-cb" onclick="toggleCb(this)"></div><div class="task-label">OSPF lab configuration</div><div class="task-time">18:30</div></div>\
+            </div>\
+            <div class="task-add">\
+              <input class="tool-input" id="new-task" style="margin:0;flex:1" placeholder="Add a task..." onkeypress="if(event.key==='Enter')addTask()"/>\
+              <button class="btn btn-cyan btn-sm" onclick="addTask()">+ Add</button>\
+            </div>\
+          </div>\
+        </div>\
+\
+        <!-- Right stats -->\
+        <div style="display:flex;flex-direction:column;gap:16px">\
+          <div class="card">\
+            <div class="card-title" style="margin-bottom:14px">\uc0\u55356 \u57263  Exam Countdown</div>\
+            <div style="font-size:3rem;font-weight:900;color:var(--cyan);line-height:1">42</div>\
+            <div style="color:var(--muted);font-size:0.85rem;margin-bottom:12px">days until your exam</div>\
+            <div class="progress-track" style="height:8px"><div class="progress-fill pf-multi" style="width:40%"></div></div>\
+            <div style="font-size:0.72rem;color:var(--muted);margin-top:6px">40% of prep time used</div>\
+          </div>\
+          <div class="card">\
+            <div class="card-title" style="margin-bottom:14px">\uc0\u55357 \u56522  Weekly Goal</div>\
+            <div style="display:flex;justify-content:space-between;font-size:0.78rem;color:var(--muted);margin-bottom:6px"><span>Study hours</span><span style="color:#fff">8 / 15 hrs</span></div>\
+            <div class="progress-track" style="height:8px;margin-bottom:14px"><div class="progress-fill pf-cyan" style="width:53%"></div></div>\
+            <div style="display:flex;justify-content:space-between;font-size:0.78rem;color:var(--muted);margin-bottom:6px"><span>Questions answered</span><span style="color:#fff">76 / 100</span></div>\
+            <div class="progress-track" style="height:8px;margin-bottom:14px"><div class="progress-fill pf-green" style="width:76%"></div></div>\
+            <div style="display:flex;justify-content:space-between;font-size:0.78rem;color:var(--muted);margin-bottom:6px"><span>Labs completed</span><span style="color:#fff">2 / 3</span></div>\
+            <div class="progress-track" style="height:8px"><div class="progress-fill pf-purple" style="width:66%"></div></div>\
+          </div>\
+          <div class="card">\
+            <div class="card-title" style="margin-bottom:12px">\uc0\u55357 \u56517  Study Heatmap</div>\
+            <div class="heatmap" id="heatmap2"></div>\
+          </div>\
+        </div>\
+      </div>\
+    </div>\
+\
+  </div><!-- /content -->\
+</div><!-- /main -->\
+\
+<!-- ============================================================\
+     MODAL\
+============================================================ -->\
+<div class="modal-bg" id="modal" onclick="closeModal(event)">\
+  <div class="modal-box">\
+    <div class="modal-head">\
+      <div class="modal-title" id="modal-title"></div>\
+      <button class="modal-close" onclick="closeModal()">\uc0\u10005 </button>\
+    </div>\
+    <div id="modal-body"></div>\
+  </div>\
+</div>\
+\
+<script>\
+/* ============================================================\
+   SIDEBAR COLLAPSE\
+============================================================ */\
+const sidebar = document.getElementById('sidebar');\
+const collapseBtn = document.getElementById('collapseBtn');\
+let collapsed = false;\
+collapseBtn.addEventListener('click', () => \{\
+  collapsed = !collapsed;\
+  sidebar.classList.toggle('collapsed', collapsed);\
+  collapseBtn.textContent = collapsed ? '\'9b' : '\'8b';\
+\});\
+\
+/* ============================================================\
+   NAVIGATION\
+============================================================ */\
+function gotoView(id, el) \{\
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));\
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));\
+  const v = document.getElementById('view-' + id);\
+  if (v) v.classList.add('active');\
+  if (el) el.classList.add('active');\
+  const titles = \{ dashboard:'Dashboard', study:'Study Materials', exam:'Practice Exam',\
+    flashcards:'Flashcards', videos:'Video Tutorials', labs:'Virtual Labs',\
+    cheatsheets:'Cheat Sheets', tools:'Network Tools', planner:'Study Planner' \};\
+  document.getElementById('pageTitle').textContent = titles[id] || id;\
+  if (id === 'exam') \{ qIdx = 0; score = 0; answered = false; renderQ(); document.getElementById('quiz-active').style.display='block'; document.getElementById('quiz-result').style.display='none'; \}\
+\}\
+\
+/* ============================================================\
+   STUDY TABS\
+============================================================ */\
+function switchStudyTab(name, btn) \{\
+  document.querySelectorAll('[id^=stab-]').forEach(t => t.classList.remove('active'));\
+  document.querySelectorAll('#view-study .tab-btn').forEach(b => b.classList.remove('active'));\
+  document.getElementById('stab-' + name).classList.add('active');\
+  btn.classList.add('active');\
+\}\
+\
+function switchVideoTab(name, btn) \{\
+  document.querySelectorAll('#view-videos .tab-content').forEach(t => t.classList.remove('active'));\
+  document.querySelectorAll('#view-videos .tab-btn').forEach(b => b.classList.remove('active'));\
+  const el = document.getElementById('vtab-' + name);\
+  if (el) el.classList.add('active'); else document.getElementById('vtab-all').classList.add('active');\
+  btn.classList.add('active');\
+\}\
+\
+/* ============================================================\
+   QUIZ\
+============================================================ */\
+const Qs = [\
+  \{ q:"What is the default administrative distance of OSPF?", opts:["90","100","110","120"], ans:2, domain:"IP Connectivity", exp:"OSPF AD = 110. Lower than RIP (120) but higher than EIGRP (90)." \},\
+  \{ q:"Which OSI layer is responsible for logical IP addressing?", opts:["Layer 1 \'97 Physical","Layer 2 \'97 Data Link","Layer 3 \'97 Network","Layer 4 \'97 Transport"], ans:2, domain:"Network Fundamentals", exp:"Layer 3 (Network) handles logical addressing using IP." \},\
+  \{ q:"What command views the MAC address table on a Cisco switch?", opts:["show ip route","show vlan brief","show mac address-table","show arp"], ans:2, domain:"Network Access", exp:"'show mac address-table' displays the CAM table on a switch." \},\
+  \{ q:"What subnet mask corresponds to a /26 prefix?", opts:["255.255.255.0","255.255.255.128","255.255.255.192","255.255.255.224"], ans:2, domain:"Network Fundamentals", exp:"/26 = 11000000 in the last octet = 255.255.255.192" \},\
+  \{ q:"Which protocol uses UDP port 53?", opts:["FTP","DNS","HTTP","SMTP"], ans:1, domain:"IP Services", exp:"DNS uses port 53 (UDP for queries, TCP for zone transfers)." \},\
+  \{ q:"In STP, which port state actively forwards traffic?", opts:["Blocking","Listening","Learning","Forwarding"], ans:3, domain:"Network Access", exp:"Only the Forwarding state passes user data. Learning builds the MAC table without forwarding." \},\
+  \{ q:"Which command enters OSPF routing process configuration?", opts:["router rip","router ospf 1","ospf enable","ip ospf start"], ans:1, domain:"IP Connectivity", exp:"'router ospf [process-id]' enters OSPF config mode. Process ID is locally significant." \},\
+  \{ q:"How many usable host addresses does a /28 subnet provide?", opts:["14","30","62","126"], ans:0, domain:"Network Fundamentals", exp:"2^4 = 16 total addresses. Subtract 2 (network + broadcast) = 14 usable hosts." \},\
+  \{ q:"VLANs logically segment a LAN at which OSI layer?", opts:["Layer 1","Layer 2","Layer 3","Layer 4"], ans:1, domain:"Network Access", exp:"VLANs operate at Layer 2 (Data Link) to create separate broadcast domains." \},\
+  \{ q:"Which NAT type permanently maps one private IP to one public IP?", opts:["Dynamic NAT","PAT (Overload)","Static NAT","Port Forwarding"], ans:2, domain:"IP Services", exp:"Static NAT = 1-to-1 permanent mapping. Used for servers that must be reachable from outside." \},\
+];\
+let qIdx=0, score=0, answered=false;\
+\
+function renderQ() \{\
+  const q = Qs[qIdx];\
+  document.getElementById('q-bar').style.width = ((qIdx+1)/Qs.length*100)+'%';\
+  document.getElementById('q-counter').textContent = (qIdx+1)+' / '+Qs.length;\
+  document.getElementById('q-domain').textContent = q.domain;\
+  document.getElementById('q-text').textContent = (qIdx+1)+'. '+q.q;\
+  document.getElementById('q-feedback').className = 'quiz-feedback';\
+  document.getElementById('q-next-btn').style.display = 'none';\
+  document.getElementById('q-score-live').textContent = 'Score: '+score;\
+  answered = false;\
+  const opts = document.getElementById('q-opts');\
+  opts.innerHTML = '';\
+  q.opts.forEach((o,i) => \{\
+    const d = document.createElement('div');\
+    d.className = 'quiz-option';\
+    d.innerHTML = `<div class="opt-key">$\{String.fromCharCode(65+i)\}</div>$\{o\}`;\
+    d.onclick = () => pickOpt(i,d);\
+    opts.appendChild(d);\
+  \});\
+\}\
+\
+function pickOpt(i,el) \{\
+  if (answered) return;\
+  answered = true;\
+  const q = Qs[qIdx];\
+  document.querySelectorAll('.quiz-option').forEach((o,j) => \{\
+    if (j === q.ans) o.classList.add('correct');\
+    else if (j === i && i !== q.ans) o.classList.add('wrong');\
+  \});\
+  const fb = document.getElementById('q-feedback');\
+  if (i === q.ans) \{ score++; fb.className='quiz-feedback show correct'; fb.innerHTML='<strong>\uc0\u10003  Correct!</strong> '+q.exp; \}\
+  else \{ fb.className='quiz-feedback show wrong'; fb.innerHTML='<strong>\uc0\u10007  Wrong.</strong> '+q.exp; \}\
+  document.getElementById('q-next-btn').style.display='inline-flex';\
+  document.getElementById('q-score-live').textContent='Score: '+score;\
+\}\
+\
+function nextQ() \{\
+  qIdx++;\
+  if (qIdx >= Qs.length) showResult();\
+  else renderQ();\
+\}\
+\
+function showResult() \{\
+  document.getElementById('quiz-active').style.display='none';\
+  document.getElementById('quiz-result').style.display='block';\
+  const pct = Math.round(score/Qs.length*100);\
+  document.getElementById('result-pct').textContent = pct+'%';\
+  const offset = 314.15 - (314.15 * pct/100);\
+  document.getElementById('result-ring').style.strokeDashoffset = offset;\
+  document.getElementById('result-ring').style.stroke = pct >= 70 ? 'var(--green)' : pct >= 50 ? 'var(--amber)' : 'var(--red)';\
+  document.getElementById('result-grade').textContent = score+' / '+Qs.length+' Correct';\
+  document.getElementById('result-msg').textContent = pct>=70 ? '\uc0\u55356 \u57225  Great work! You\\'re exam-ready on these topics.' : '\u55357 \u56538  Keep studying \'97 aim for 70%+ before your exam.';\
+\}\
+\
+function restartQ() \{\
+  qIdx=0; score=0; answered=false;\
+  document.getElementById('quiz-active').style.display='block';\
+  document.getElementById('quiz-result').style.display='none';\
+  renderQ();\
+\}\
+renderQ();\
+\
+/* ============================================================\
+   FLASHCARDS\
+============================================================ */\
+const fcCards = [\
+  \{q:"What is the default administrative distance of OSPF?",a:"110 \'97 Lower than RIP (120), higher than EIGRP (90). Administrative distance determines route preference when multiple protocols know the same destination."\},\
+  \{q:"What does CIDR stand for?",a:"Classless Inter-Domain Routing \'97 allows flexible subnet sizing beyond classful A/B/C boundaries using prefix notation like /24."\},\
+  \{q:"What is a trunk link in a VLAN context?",a:"A trunk link carries traffic for multiple VLANs between switches using 802.1Q encapsulation to tag each frame with a VLAN ID."\},\
+  \{q:"What does ARP do?",a:"Address Resolution Protocol maps a known IPv4 address to an unknown MAC address on a local network segment using broadcast requests."\},\
+  \{q:"List the STP port states in order.",a:"Blocking \uc0\u8594  Listening \u8594  Learning \u8594  Forwarding (+ Disabled). Only the Forwarding state passes user traffic."\},\
+  \{q:"What is a wildcard mask in ACLs?",a:"A wildcard mask specifies which bits of an IP address are checked in an ACL. 0 = must match, 1 = don't care. It is the inverse of a subnet mask."\},\
+  \{q:"What is HSRP used for?",a:"Hot Standby Router Protocol provides first-hop gateway redundancy. One Active and one Standby router share a virtual IP; failover is automatic."\},\
+  \{q:"Key difference between TCP and UDP?",a:"TCP is connection-oriented \'97 provides reliable, ordered delivery with acknowledgments. UDP is connectionless \'97 faster but no guarantee of delivery or order."\},\
+];\
+let fcIdx=0;\
+function renderFc() \{\
+  document.getElementById('fc-q-text').textContent = fcCards[fcIdx].q;\
+  document.getElementById('fc-a-text').textContent = fcCards[fcIdx].a;\
+  document.getElementById('fc-counter').textContent = (fcIdx+1)+' / '+fcCards.length;\
+  document.getElementById('fc-card').classList.remove('flipped');\
+\}\
+function fcFlip() \{ document.getElementById('fc-card').classList.toggle('flipped'); \}\
+function fcNext() \{ fcIdx=(fcIdx+1)%fcCards.length; renderFc(); \}\
+function fcPrev() \{ fcIdx=(fcIdx-1+fcCards.length)%fcCards.length; renderFc(); \}\
+function fcRate(r) \{ fcNext(); \}\
+\
+/* ============================================================\
+   TOOLS\
+============================================================ */\
+function doSubnet() \{\
+  const ip = document.getElementById('t-ip').value.trim();\
+  const pfx = parseInt(document.getElementById('t-pfx').value);\
+  const res = document.getElementById('r-subnet');\
+  if (!ip || isNaN(pfx)||pfx<1||pfx>30) \{ alert('Enter valid IP and prefix 1-30'); return; \}\
+  const parts = ip.split('.').map(Number);\
+  if (parts.length!==4||parts.some(p=>isNaN(p)||p<0||p>255)) \{ alert('Invalid IP'); return; \}\
+  const hosts = Math.pow(2,32-pfx)-2;\
+  const mo = []; let m = 0xFFFFFFFF << (32-pfx);\
+  for (let i=3;i>=0;i--) \{ mo.unshift(m&0xFF); m>>=8; \}\
+  const mask = mo.join('.');\
+  const wild = mo.map(o=>255-o).join('.');\
+  const net = parts.map((p,i)=>p&mo[i]);\
+  const bc = net.map((p,i)=>p|(255-mo[i])).join('.');\
+  const fh=[...net]; fh[3]++;\
+  const lh=bc.split('.').map(Number); lh[3]--;\
+  res.textContent = `Network:      $\{net.join('.')\}/$\{pfx\}\\nSubnet Mask:  $\{mask\}\\nWildcard:     $\{wild\}\\nFirst Host:   $\{fh.join('.')\}\\nLast Host:    $\{lh.join('.')\}\\nBroadcast:    $\{bc\}\\nUsable Hosts: $\{hosts.toLocaleString()\}`;\
+  res.classList.add('show');\
+\}\
+function doWildcard() \{\
+  const m = document.getElementById('t-wc').value.trim();\
+  const res = document.getElementById('r-wc');\
+  const p = m.split('.').map(Number);\
+  if (p.length!==4||p.some(x=>isNaN(x))) \{ alert('Invalid mask'); return; \}\
+  res.textContent = `Subnet Mask:  $\{m\}\\nWildcard:     $\{p.map(x=>255-x).join('.')\}`;\
+  res.classList.add('show');\
+\}\
+function doBinary() \{\
+  const ip = document.getElementById('t-bin').value.trim();\
+  const res = document.getElementById('r-bin');\
+  const p = ip.split('.').map(Number);\
+  if (p.length!==4||p.some(x=>isNaN(x)||x<0||x>255)) \{ alert('Invalid IP'); return; \}\
+  const lines = p.map(x=>String(x).padEnd(3)+' = '+x.toString(2).padStart(8,'0'));\
+  res.textContent = lines.join('\\n')+'\\n\uc0\u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \\n'+p.map(x=>x.toString(2).padStart(8,'0')).join('.');\
+  res.classList.add('show');\
+\}\
+\
+/* ============================================================\
+   PLANNER\
+============================================================ */\
+function buildWeek() \{\
+  const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];\
+  const today = new Date();\
+  const wr = document.getElementById('weekRow');\
+  if (!wr) return;\
+  wr.innerHTML = '';\
+  for (let i=0;i<7;i++) \{\
+    const d = new Date(today); d.setDate(today.getDate()-today.getDay()+i);\
+    const box = document.createElement('div');\
+    box.className = 'day-box'+(i===today.getDay()?' today':'')+(([1,3,5].includes(i))?' has-task':'');\
+    box.innerHTML = `<div class="day-abbr">$\{days[i]\}</div><div class="day-num">$\{d.getDate()\}</div>`;\
+    wr.appendChild(box);\
+  \}\
+\}\
+buildWeek();\
+\
+function toggleCb(el) \{\
+  el.classList.toggle('done');\
+  el.textContent = el.classList.contains('done') ? '\uc0\u10003 ' : '';\
+  el.nextElementSibling.classList.toggle('done');\
+\}\
+function addTask() \{\
+  const inp = document.getElementById('new-task');\
+  const t = inp.value.trim(); if (!t) return;\
+  const d = document.createElement('div');\
+  d.className = 'task-item';\
+  d.innerHTML = `<div class="task-cb" onclick="toggleCb(this)"></div><div class="task-label">$\{t\}</div><div class="task-time">New</div>`;\
+  document.getElementById('task-list').appendChild(d);\
+  inp.value = '';\
+\}\
+\
+/* ============================================================\
+   HEATMAP\
+============================================================ */\
+function buildHeatmap(id) \{\
+  const el = document.getElementById(id);\
+  if (!el) return;\
+  el.innerHTML = '';\
+  const lvls = [0,0,1,2,3,4,2,1,0,0,2,3,4,3,2,1,0,1,2,3,2,1,0,0,2,3,4,2];\
+  lvls.forEach((l,i) => \{\
+    const c = document.createElement('div');\
+    c.className = `hm-cell hm-$\{l\}$\{i===27?' hm-today':''\}`;\
+    c.title = `$\{l === 0 ? 'No' : l\} sessions`;\
+    el.appendChild(c);\
+  \});\
+\}\
+buildHeatmap('heatmap');\
+buildHeatmap('heatmap2');\
+\
+/* ============================================================\
+   MODAL\
+============================================================ */\
+function openModal(title, desc) \{\
+  document.getElementById('modal-title').textContent = '\uc0\u55356 \u57260  '+title;\
+  document.getElementById('modal-body').innerHTML = `\
+    <div style="background:var(--bg);border-radius:var(--r-md);height:180px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;border:1px solid var(--border);font-size:2.5rem">\uc0\u9654 </div>\
+    <p style="color:var(--muted);margin-bottom:10px;font-size:0.875rem">$\{desc\}</p>\
+    <p style="font-size:0.78rem;color:var(--muted);line-height:1.6">In the full build, connect YouTube, Vimeo, or a self-hosted video provider here. Videos open in this panel without leaving the dashboard.</p>\
+    <div style="display:flex;gap:8px;margin-top:16px">\
+      <button class="btn btn-cyan btn-sm" onclick="closeModal()">Watch Now</button>\
+      <button class="btn btn-outline btn-sm" onclick="closeModal()">Save for Later</button>\
+    </div>`;\
+  document.getElementById('modal').classList.add('open');\
+\}\
+\
+function openLabModal(title, desc) \{\
+  document.getElementById('modal-title').textContent = '\uc0\u55357 \u56741 \u65039  '+title;\
+  document.getElementById('modal-body').innerHTML = `\
+    <p style="color:var(--muted);margin-bottom:14px;font-size:0.875rem">$\{desc\}</p>\
+    <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--r-sm);padding:14px;font-family:var(--mono);font-size:0.78rem;color:var(--green);line-height:2;margin-bottom:14px">\
+      Router&gt; enable<br>Router# configure terminal<br>Router(config)# hostname R1<br>R1(config)# <span style="color:var(--cyan)">|</span>\
+    </div>\
+    <p style="font-size:0.78rem;color:var(--muted)">Download the Packet Tracer topology file (.pkt) and follow the step-by-step guide to complete all objectives.</p>\
+    <div style="display:flex;gap:8px;margin-top:16px">\
+      <button class="btn btn-cyan btn-sm" onclick="closeModal()">\uc0\u11015  Download .pkt</button>\
+      <button class="btn btn-outline btn-sm" onclick="closeModal()">\uc0\u55357 \u56516  Lab Guide</button>\
+    </div>`;\
+  document.getElementById('modal').classList.add('open');\
+\}\
+\
+function closeModal(e) \{\
+  if (!e || e.target === document.getElementById('modal')) \{\
+    document.getElementById('modal').classList.remove('open');\
+  \}\
+\}\
+\
+/* ============================================================\
+   KEYBOARD SHORTCUTS\
+============================================================ */\
+document.addEventListener('keydown', e => \{\
+  if (e.key==='Escape') closeModal();\
+  if (e.key==='ArrowRight' && document.getElementById('view-flashcards').classList.contains('active')) fcNext();\
+  if (e.key==='ArrowLeft' && document.getElementById('view-flashcards').classList.contains('active')) fcPrev();\
+  if (e.key===' ' && document.getElementById('view-flashcards').classList.contains('active')) \{ e.preventDefault(); fcFlip(); \}\
+\});\
+</script>\
+</body>\
+</html>}
