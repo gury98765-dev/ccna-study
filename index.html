@@ -1,0 +1,1040 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.4">
+  <style type="text/css">
+    body {background-color: #080b10}
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Apple Symbols'; color: #000000; color: rgba(0, 0, 0, 0.85); -webkit-text-stroke: rgba(0, 0, 0, 0.85)}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px '.Apple Color Emoji UI'; color: #e2e8f2; -webkit-text-stroke: #e2e8f2; background-color: #0d101c}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px '.Apple Color Emoji UI'; color: #e2e8f2; -webkit-text-stroke: #e2e8f2; background-color: #0d101c; min-height: 21.0px}
+    span.s1 {font-kerning: none; background-color: #0d101c}
+    span.s2 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">☰</span></p>
+<p class="p2"><span class="s2">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p2"><span class="s2">&lt;html lang="en"&gt;</span></p>
+<p class="p2"><span class="s2">&lt;head&gt;</span></p>
+<p class="p2"><span class="s2">&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p2"><span class="s2">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p2"><span class="s2">&lt;title&gt;NetAcad Pro — CCNA Preparation Hub&lt;/title&gt;</span></p>
+<p class="p2"><span class="s2">&lt;link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&amp;family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&amp;display=swap" rel="stylesheet"&gt;</span></p>
+<p class="p2"><span class="s2">&lt;style&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>:root {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>--bg: #070b14;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>--surface: #0e1525;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>--surface2: #141d33;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>--border: rgba(255,255,255,0.07);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>--text: #e8edf5;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>--muted: #7a8aaa;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>--accent1: #00d4ff;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>--accent2: #7c3aed;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>--accent3: #f59e0b;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>--accent4: #10b981;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>--accent5: #ef4444;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>--accent6: #ec4899;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>--glow1: rgba(0,212,255,0.15);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>--glow2: rgba(124,58,237,0.15);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>* { margin:0; padding:0; box-sizing:border-box; }</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>body {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>font-family: 'DM Sans', sans-serif;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>background: var(--bg);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>color: var(--text);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>min-height: 100vh;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>overflow-x: hidden;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>/* Ambient background */</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>body::before {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>content:'';</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>position:fixed; inset:0;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>background:</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>radial-gradient(ellipse 80% 50% at 20% 0%, rgba(0,212,255,0.07) 0%, transparent 60%),</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>radial-gradient(ellipse 60% 40% at 80% 100%, rgba(124,58,237,0.08) 0%, transparent 60%);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>pointer-events:none; z-index:0;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>/* ---- SIDEBAR ---- */</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.sidebar {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>position: fixed; left:0; top:0; bottom:0;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>width: 230px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>background: var(--surface);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>border-right: 1px solid var(--border);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>display: flex; flex-direction: column;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>padding: 0 0 24px 0;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>z-index: 100;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>transition: transform .3s;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.logo {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>padding: 28px 24px 20px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>border-bottom: 1px solid var(--border);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>margin-bottom: 8px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.logo-badge {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>display: inline-flex; align-items: center; gap: 10px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.logo-icon {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>width:36px; height:36px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>background: linear-gradient(135deg, var(--accent1), var(--accent2));</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>border-radius: 10px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>display:flex; align-items:center; justify-content:center;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>font-size:18px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.logo-text { font-family:'Syne',sans-serif; font-weight:800; font-size:17px; letter-spacing:-.3px; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.logo-text span { color: var(--accent1); }</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.nav-section-label {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>font-size:10px; font-weight:600; letter-spacing:1.5px; color:var(--muted);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>text-transform:uppercase; padding: 12px 24px 6px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>nav a {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>display:flex; align-items:center; gap:11px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>padding: 10px 24px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>text-decoration:none; color:var(--muted);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>font-size:14px; font-weight:500;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>border-radius:0; transition: all .2s;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>position:relative;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>nav a:hover, nav a.active {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>color: var(--text);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>background: rgba(255,255,255,0.04);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>nav a.active::before {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>content:'';</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>position:absolute; left:0; top:50%; transform:translateY(-50%);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>width:3px; height:60%; border-radius:0 2px 2px 0;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>background: var(--accent1);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>nav a .nav-icon { font-size:16px; width:20px; text-align:center; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>nav a .badge {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>margin-left:auto; background:var(--accent2);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>color:#fff; font-size:10px; font-weight:700;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>padding:2px 7px; border-radius:10px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.sidebar-footer {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>margin-top:auto; padding: 16px 24px 0;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>border-top: 1px solid var(--border);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.user-card {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>display:flex; align-items:center; gap:10px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>padding: 10px 0;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.user-avatar {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>width:34px; height:34px; border-radius:50%;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>background: linear-gradient(135deg,#7c3aed,#00d4ff);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>display:flex; align-items:center; justify-content:center;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>font-weight:700; font-size:13px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.user-info .name { font-size:13px; font-weight:600; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.user-info .role { font-size:11px; color:var(--muted); }</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>/* ---- MAIN ---- */</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.main {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>margin-left: 230px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>padding: 32px 36px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>position:relative; z-index:1;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>min-height:100vh;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>/* ---- TOP BAR ---- */</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.topbar {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>display:flex; align-items:center; justify-content:space-between;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>margin-bottom: 36px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>flex-wrap:wrap; gap:16px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.topbar-left h1 {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>font-family:'Syne',sans-serif; font-size:26px; font-weight:800;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>letter-spacing:-.5px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.topbar-left p { color:var(--muted); font-size:14px; margin-top:3px; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.topbar-right { display:flex; align-items:center; gap:12px; }</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.search-bar {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>display:flex; align-items:center; gap:8px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>background:var(--surface); border:1px solid var(--border);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>border-radius:10px; padding:9px 14px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>width:220px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.search-bar input {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>background:none; border:none; outline:none;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>color:var(--text); font-family:inherit; font-size:13px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>width:100%;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.search-bar input::placeholder { color:var(--muted); }</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.btn {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>display:inline-flex; align-items:center; gap:7px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>padding:9px 18px; border-radius:10px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>font-family:inherit; font-size:13px; font-weight:600;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>cursor:pointer; border:none; transition: all .2s;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>text-decoration:none;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.btn-primary {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>background: linear-gradient(135deg,var(--accent1),#0099cc);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>color: #000;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>box-shadow: 0 4px 20px rgba(0,212,255,0.3);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.btn-primary:hover { transform:translateY(-1px); box-shadow:0 6px 25px rgba(0,212,255,0.4); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.btn-ghost {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>background:var(--surface); border:1px solid var(--border); color:var(--text);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.btn-ghost:hover { background:var(--surface2); }</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>/* ---- STATS ROW ---- */</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.stats-row {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>display:grid; grid-template-columns: repeat(4,1fr); gap:18px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>margin-bottom:32px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.stat-card {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>background:var(--surface); border:1px solid var(--border);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>border-radius:16px; padding:20px 22px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>position:relative; overflow:hidden;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>transition: transform .2s, box-shadow .2s;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.stat-card:hover { transform:translateY(-3px); box-shadow:0 12px 40px rgba(0,0,0,0.4); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.stat-card::before {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>content:''; position:absolute; top:0; left:0; right:0; height:2px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.stat-card:nth-child(1)::before { background: linear-gradient(90deg,var(--accent1),transparent); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.stat-card:nth-child(2)::before { background: linear-gradient(90deg,var(--accent2),transparent); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.stat-card:nth-child(3)::before { background: linear-gradient(90deg,var(--accent3),transparent); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.stat-card:nth-child(4)::before { background: linear-gradient(90deg,var(--accent4),transparent); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.stat-label { font-size:12px; color:var(--muted); font-weight:500; margin-bottom:8px; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.stat-value { font-family:'Syne',sans-serif; font-size:28px; font-weight:800; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.stat-sub { font-size:12px; color:var(--muted); margin-top:4px; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.stat-icon { position:absolute; right:18px; top:18px; font-size:22px; opacity:.5; }</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>/* ---- SECTION HEADING ---- */</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.section-head {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>display:flex; align-items:center; justify-content:space-between;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>margin-bottom:18px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.section-head h2 {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>font-family:'Syne',sans-serif; font-size:18px; font-weight:700;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.see-all { font-size:13px; color:var(--accent1); text-decoration:none; font-weight:500; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.see-all:hover { text-decoration:underline; }</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>/* ---- FEATURE CARDS GRID ---- */</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.cards-grid {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>display:grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr));</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>gap:20px; margin-bottom:36px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.feature-card {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>background:var(--surface); border:1px solid var(--border);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>border-radius:18px; padding:24px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>position:relative; overflow:hidden;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>transition: transform .25s, box-shadow .25s;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>cursor:pointer;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.feature-card:hover {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>transform:translateY(-4px);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>box-shadow:0 16px 48px rgba(0,0,0,0.5);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>border-color: rgba(255,255,255,0.12);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.feature-card .card-glow {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>position:absolute; width:120px; height:120px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>border-radius:50%; filter:blur(50px);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>top:-20px; right:-20px; opacity:.5;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>pointer-events:none;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.card-icon-wrap {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>width:48px; height:48px; border-radius:13px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>display:flex; align-items:center; justify-content:center;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>font-size:22px; margin-bottom:16px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.feature-card h3 {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>font-family:'Syne',sans-serif; font-size:16px; font-weight:700;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>margin-bottom:8px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.feature-card p { font-size:13px; color:var(--muted); line-height:1.6; margin-bottom:18px; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.card-meta { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.tag {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>font-size:11px; font-weight:600; padding:3px 10px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>border-radius:20px; background:rgba(255,255,255,0.06);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>color:var(--muted); border:1px solid var(--border);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.card-btn {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>margin-left:auto;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>display:inline-flex; align-items:center; gap:5px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>font-size:12px; font-weight:600; color:inherit;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>padding:5px 12px; border-radius:8px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>border:1px solid currentColor; text-decoration:none;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>opacity:.8; transition:opacity .2s;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.card-btn:hover { opacity:1; }</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>/* Card color themes */</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.card-cyan .card-icon-wrap { background:rgba(0,212,255,0.12); color:var(--accent1); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.card-cyan .card-glow { background:var(--accent1); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.card-cyan .card-btn { color:var(--accent1); }</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.card-purple .card-icon-wrap { background:rgba(124,58,237,0.15); color:var(--accent2); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.card-purple .card-glow { background:var(--accent2); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.card-purple .card-btn { color:#a78bfa; }</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.card-amber .card-icon-wrap { background:rgba(245,158,11,0.12); color:var(--accent3); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.card-amber .card-glow { background:var(--accent3); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.card-amber .card-btn { color:var(--accent3); }</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.card-green .card-icon-wrap { background:rgba(16,185,129,0.12); color:var(--accent4); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.card-green .card-glow { background:var(--accent4); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.card-green .card-btn { color:var(--accent4); }</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.card-red .card-icon-wrap { background:rgba(239,68,68,0.12); color:var(--accent5); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.card-red .card-glow { background:var(--accent5); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.card-red .card-btn { color:var(--accent5); }</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.card-pink .card-icon-wrap { background:rgba(236,72,153,0.12); color:var(--accent6); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.card-pink .card-glow { background:var(--accent6); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.card-pink .card-btn { color:var(--accent6); }</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>/* ---- PROGRESS SECTION ---- */</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.two-col { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:36px; }</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.panel {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>background:var(--surface); border:1px solid var(--border);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>border-radius:18px; padding:24px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.panel h3 { font-family:'Syne',sans-serif; font-size:15px; font-weight:700; margin-bottom:18px; }</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.topic-row {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>display:flex; align-items:center; gap:12px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>padding:10px 0;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>border-bottom: 1px solid var(--border);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.topic-row:last-child { border-bottom:none; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.topic-icon { font-size:18px; width:30px; text-align:center; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.topic-name { font-size:13px; font-weight:500; flex:1; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.progress-wrap { width:100px; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.progress-bar {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>height:5px; border-radius:3px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>background:rgba(255,255,255,0.07);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>position:relative; overflow:hidden;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.progress-fill {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>height:100%; border-radius:3px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>position:absolute; left:0; top:0;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>transition: width 1s ease;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.progress-pct { font-size:11px; color:var(--muted); margin-top:3px; text-align:right; }</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>/* Exam schedule */</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.schedule-item {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>display:flex; align-items:flex-start; gap:14px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>padding:12px 0; border-bottom:1px solid var(--border);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.schedule-item:last-child { border-bottom:none; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.sch-date {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>background:var(--surface2); border-radius:10px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>padding:8px 10px; text-align:center; min-width:46px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.sch-date .day { font-family:'Syne',sans-serif; font-size:20px; font-weight:800; line-height:1; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.sch-date .month { font-size:10px; color:var(--muted); text-transform:uppercase; font-weight:600; margin-top:2px; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.sch-info .title { font-size:13px; font-weight:600; margin-bottom:3px; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.sch-info .desc { font-size:12px; color:var(--muted); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.sch-badge {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>margin-left:auto; padding:3px 10px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>border-radius:20px; font-size:11px; font-weight:600;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.badge-blue { background:rgba(0,212,255,0.1); color:var(--accent1); border:1px solid rgba(0,212,255,0.2); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.badge-purple { background:rgba(124,58,237,0.1); color:#a78bfa; border:1px solid rgba(124,58,237,0.2); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.badge-green { background:rgba(16,185,129,0.1); color:var(--accent4); border:1px solid rgba(16,185,129,0.2); }</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>/* ---- TOOLS ROW ---- */</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.tools-row {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>display:grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr));</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>gap:14px; margin-bottom:36px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.tool-card {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>background:var(--surface); border:1px solid var(--border);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>border-radius:14px; padding:18px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>display:flex; align-items:center; gap:14px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>cursor:pointer; transition:all .2s;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>text-decoration:none; color:var(--text);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.tool-card:hover {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>background:var(--surface2); border-color:rgba(255,255,255,0.12);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>transform:translateY(-2px);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.tool-icon { font-size:24px; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.tool-name { font-size:13px; font-weight:600; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.tool-desc { font-size:11px; color:var(--muted); margin-top:2px; }</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>/* ---- PLANNER ---- */</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.planner-grid {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>display:grid; grid-template-columns:repeat(7,1fr); gap:8px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>margin-bottom:12px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.day-cell {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>background:var(--surface2); border:1px solid var(--border);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>border-radius:10px; padding:10px 6px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>text-align:center; cursor:pointer; transition:all .2s;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.day-cell:hover { border-color:var(--accent1); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.day-cell.today { border-color:var(--accent1); background:rgba(0,212,255,0.07); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.day-cell.has-task::after {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>content:''; display:block; width:5px; height:5px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>border-radius:50%; background:var(--accent4);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>margin:4px auto 0;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.day-cell .dc-name { font-size:10px; color:var(--muted); margin-bottom:4px; font-weight:600; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.day-cell .dc-num { font-family:'Syne',sans-serif; font-size:16px; font-weight:700; }</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.task-list .task-item {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>display:flex; align-items:center; gap:12px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>padding:8px 0; border-bottom:1px solid var(--border);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>font-size:13px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.task-item:last-child { border-bottom:none; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.task-check {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>width:18px; height:18px; border-radius:5px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>border:2px solid var(--border); flex-shrink:0;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>display:flex; align-items:center; justify-content:center;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>cursor:pointer; transition:all .2s;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.task-check.done { background:var(--accent4); border-color:var(--accent4); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.task-check.done::after { content:'✓'; font-size:10px; color:#000; font-weight:700; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.task-text { flex:1; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.task-text.done-text { text-decoration:line-through; color:var(--muted); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.task-time { font-size:11px; color:var(--muted); }</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>/* ---- FLASHCARD ---- */</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.flashcard-demo {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>perspective:1000px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>height:160px; cursor:pointer; margin-bottom:16px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.fc-inner {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>width:100%; height:100%;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>position:relative;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>transform-style:preserve-3d;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>transition:transform .6s;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.flashcard-demo.flipped .fc-inner { transform:rotateY(180deg); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.fc-face {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>position:absolute; inset:0;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>backface-visibility:hidden;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>border-radius:14px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>display:flex; flex-direction:column;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>align-items:center; justify-content:center;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>text-align:center; padding:20px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.fc-front {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>background: linear-gradient(135deg,rgba(124,58,237,0.2),rgba(0,212,255,0.1));</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>border:1px solid rgba(124,58,237,0.3);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.fc-back {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>background: linear-gradient(135deg,rgba(0,212,255,0.15),rgba(16,185,129,0.1));</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>border:1px solid rgba(0,212,255,0.3);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>transform:rotateY(180deg);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.fc-label { font-size:10px; color:var(--muted); font-weight:600; letter-spacing:1px; text-transform:uppercase; margin-bottom:10px; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.fc-question { font-family:'Syne',sans-serif; font-size:15px; font-weight:700; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.fc-answer { font-size:13px; color:var(--text); line-height:1.6; }</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.fc-controls { display:flex; gap:8px; justify-content:center; }</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>/* ---- ANIMATIONS ---- */</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>@keyframes fadeUp {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>from { opacity:0; transform:translateY(20px); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>to { opacity:1; transform:translateY(0); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.stats-row, .cards-grid, .two-col, .tools-row {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>animation: fadeUp .5s ease both;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.cards-grid { animation-delay:.1s; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.two-col { animation-delay:.2s; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.tools-row { animation-delay:.3s; }</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>/* ---- HAMBURGER ---- */</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>.hamburger {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>display:none; position:fixed; top:16px; left:16px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>z-index:200; background:var(--surface); border:1px solid var(--border);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>border-radius:8px; padding:8px; cursor:pointer; font-size:18px;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>/* ---- RESPONSIVE ---- */</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>@media(max-width:1100px) {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>.stats-row { grid-template-columns:repeat(2,1fr); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>.two-col { grid-template-columns:1fr; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>@media(max-width:860px) {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>.sidebar { transform:translateX(-230px); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>.sidebar.open { transform:translateX(0); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>.main { margin-left:0; padding:80px 20px 24px; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>.hamburger { display:flex; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>.cards-grid { grid-template-columns:1fr; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>@media(max-width:600px) {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>.stats-row { grid-template-columns:1fr 1fr; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>.planner-grid { grid-template-columns:repeat(7,1fr); gap:4px; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>.day-cell { padding:6px 2px; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>.day-cell .dc-num { font-size:13px; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>/* Scrollbar */</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>::-webkit-scrollbar { width:6px; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>::-webkit-scrollbar-track { background:transparent; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>::-webkit-scrollbar-thumb { background:rgba(255,255,255,0.1); border-radius:3px; }</span></p>
+<p class="p2"><span class="s2">&lt;/style&gt;</span></p>
+<p class="p2"><span class="s2">&lt;/head&gt;</span></p>
+<p class="p2"><span class="s2">&lt;body&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2">&lt;button class="hamburger" onclick="toggleSidebar()"&gt;☰&lt;/button&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2">&lt;!-- SIDEBAR --&gt;</span></p>
+<p class="p2"><span class="s2">&lt;aside class="sidebar" id="sidebar"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;div class="logo"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;div class="logo-badge"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="logo-icon"&gt;🌐&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="logo-text"&gt;Net&lt;span&gt;Acad&lt;/span&gt; Pro&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;div class="nav-section-label"&gt;Overview&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;nav&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;a href="#" class="active"&gt;&lt;span class="nav-icon"&gt;📊&lt;/span&gt; Dashboard&lt;/a&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;a href="#"&gt;&lt;span class="nav-icon"&gt;📅&lt;/span&gt; Study Planner&lt;/a&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;a href="#"&gt;&lt;span class="nav-icon"&gt;📈&lt;/span&gt; Progress&lt;/a&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;/nav&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;div class="nav-section-label"&gt;Study&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;nav&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;a href="#"&gt;&lt;span class="nav-icon"&gt;📚&lt;/span&gt; Study Materials&lt;/a&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;a href="#"&gt;&lt;span class="nav-icon"&gt;🃏&lt;/span&gt; Flashcards &lt;span class="badge"&gt;48&lt;/span&gt;&lt;/a&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;a href="#"&gt;&lt;span class="nav-icon"&gt;📋&lt;/span&gt; Cheat Sheets&lt;/a&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;a href="#"&gt;&lt;span class="nav-icon"&gt;🎬&lt;/span&gt; Video Tutorials&lt;/a&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;/nav&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;div class="nav-section-label"&gt;Practice&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;nav&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;a href="#"&gt;&lt;span class="nav-icon"&gt;🎯&lt;/span&gt; Practice Exams &lt;span class="badge"&gt;5&lt;/span&gt;&lt;/a&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;a href="#"&gt;&lt;span class="nav-icon"&gt;🔬&lt;/span&gt; Virtual Labs&lt;/a&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;a href="#"&gt;&lt;span class="nav-icon"&gt;🛠️&lt;/span&gt; Network Tools&lt;/a&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;/nav&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;div class="nav-section-label"&gt;Account&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;nav&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;a href="#"&gt;&lt;span class="nav-icon"&gt;⚙️&lt;/span&gt; Settings&lt;/a&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;a href="#"&gt;&lt;span class="nav-icon"&gt;❓&lt;/span&gt; Help&lt;/a&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;/nav&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;div class="sidebar-footer"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;div class="user-card"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="user-avatar"&gt;JS&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="user-info"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="name"&gt;Jordan Smith&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="role"&gt;CCNA Candidate&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2">&lt;/aside&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2">&lt;!-- MAIN CONTENT --&gt;</span></p>
+<p class="p2"><span class="s2">&lt;main class="main"&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;!-- TOPBAR --&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;div class="topbar"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;div class="topbar-left"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;h1&gt;Welcome back, Jordan 👋&lt;/h1&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;p&gt;You're 62% ready for CCNA 200-301. Keep up the momentum!&lt;/p&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;div class="topbar-right"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="search-bar"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;span&gt;🔍&lt;/span&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;input type="text" placeholder="Search topics, labs..."&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;button class="btn btn-primary"&gt;▶ Resume Study&lt;/button&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;!-- STATS ROW --&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;div class="stats-row"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;div class="stat-card"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="stat-label"&gt;Study Streak&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="stat-value"&gt;12 &lt;span style="font-size:16px"&gt;Days&lt;/span&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="stat-sub"&gt;🔥 Personal best!&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="stat-icon"&gt;🔥&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;div class="stat-card"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="stat-label"&gt;Exam Score (Avg)&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="stat-value"&gt;74&lt;span style="font-size:16px"&gt;%&lt;/span&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="stat-sub"&gt;↑ +8% from last week&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="stat-icon"&gt;📊&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;div class="stat-card"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="stat-label"&gt;Labs Completed&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="stat-value"&gt;18&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="stat-sub"&gt;6 remaining&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="stat-icon"&gt;🔬&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;div class="stat-card"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="stat-label"&gt;Flashcards Mastered&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="stat-value"&gt;134&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="stat-sub"&gt;of 200 total&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="stat-icon"&gt;🃏&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;!-- FEATURE CARDS --&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;div class="section-head"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;h2&gt;Study Resources&lt;/h2&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;a href="#" class="see-all"&gt;View all →&lt;/a&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;div class="cards-grid"&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;!-- Practice Exams --&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;div class="feature-card card-cyan" onclick="openModal('exam')"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="card-glow"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="card-icon-wrap"&gt;🎯&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;h3&gt;Practice Exams&lt;/h3&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;p&gt;Full-length CCNA 200-301 mock exams with detailed answer explanations and performance analytics.&lt;/p&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="card-meta"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;span class="tag"&gt;5 Exams&lt;/span&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;span class="tag"&gt;120 Q each&lt;/span&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;a href="#" class="card-btn"&gt;Start →&lt;/a&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;!-- Study Materials --&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;div class="feature-card card-purple" onclick="openModal('study')"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="card-glow"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="card-icon-wrap"&gt;📚&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;h3&gt;Study Materials&lt;/h3&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;p&gt;Comprehensive notes on networking fundamentals, IP routing, switching, security, and automation.&lt;/p&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="card-meta"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;span class="tag"&gt;12 Modules&lt;/span&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;span class="tag"&gt;PDF + Web&lt;/span&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;a href="#" class="card-btn"&gt;Browse →&lt;/a&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;!-- Virtual Labs --&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;div class="feature-card card-amber" onclick="openModal('labs')"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="card-glow"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="card-icon-wrap"&gt;🔬&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;h3&gt;Virtual Labs&lt;/h3&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;p&gt;Hands-on Packet Tracer and GNS3-style simulations covering OSPF, EIGRP, VLANs, ACLs &amp; more.&lt;/p&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="card-meta"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;span class="tag"&gt;24 Labs&lt;/span&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;span class="tag"&gt;Interactive&lt;/span&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;a href="#" class="card-btn"&gt;Enter →&lt;/a&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;!-- Video Tutorials --&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;div class="feature-card card-red" onclick="openModal('video')"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="card-glow"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="card-icon-wrap"&gt;🎬&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;h3&gt;Video Tutorials&lt;/h3&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;p&gt;Curated video lessons from top instructors covering every CCNA exam domain with subtitles.&lt;/p&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="card-meta"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;span class="tag"&gt;80+ Hours&lt;/span&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;span class="tag"&gt;HD&lt;/span&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;a href="#" class="card-btn"&gt;Watch →&lt;/a&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;!-- Flashcards --&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;div class="feature-card card-green" onclick="openModal('flash')"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="card-glow"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="card-icon-wrap"&gt;🃏&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;h3&gt;Flashcards&lt;/h3&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;p&gt;Spaced-repetition flashcard decks for ports, protocols, commands, subnetting and terminology.&lt;/p&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="card-meta"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;span class="tag"&gt;200 Cards&lt;/span&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;span class="tag"&gt;SRS&lt;/span&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;a href="#" class="card-btn"&gt;Study →&lt;/a&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;!-- Cheat Sheets --&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;div class="feature-card card-pink" onclick="openModal('cheat')"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="card-glow"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="card-icon-wrap"&gt;📋&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;h3&gt;Cheat Sheets&lt;/h3&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;p&gt;Printable quick-reference sheets for IOS commands, OSI model, subnetting, and protocols.&lt;/p&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="card-meta"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;span class="tag"&gt;15 Sheets&lt;/span&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;span class="tag"&gt;Printable&lt;/span&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;a href="#" class="card-btn"&gt;Download →&lt;/a&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;!-- TWO COL --&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;div class="two-col"&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;!-- Topic Progress --&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;div class="panel"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;h3&gt;📈 Topic Progress&lt;/h3&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="topic-row"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="topic-icon"&gt;🌐&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="topic-name"&gt;Network Fundamentals&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="progress-wrap"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="progress-bar"&gt;&lt;div class="progress-fill" style="width:88%;background:var(--accent4)"&gt;&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="progress-pct"&gt;88%&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="topic-row"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="topic-icon"&gt;🔀&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="topic-name"&gt;IP Routing&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="progress-wrap"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="progress-bar"&gt;&lt;div class="progress-fill" style="width:72%;background:var(--accent1)"&gt;&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="progress-pct"&gt;72%&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="topic-row"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="topic-icon"&gt;🔌&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="topic-name"&gt;Switching &amp; VLANs&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="progress-wrap"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="progress-bar"&gt;&lt;div class="progress-fill" style="width:65%;background:var(--accent2)"&gt;&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="progress-pct"&gt;65%&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="topic-row"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="topic-icon"&gt;🔒&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="topic-name"&gt;Security Fundamentals&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="progress-wrap"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="progress-bar"&gt;&lt;div class="progress-fill" style="width:48%;background:var(--accent3)"&gt;&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="progress-pct"&gt;48%&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="topic-row"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="topic-icon"&gt;⚙️&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="topic-name"&gt;Automation &amp; REST&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="progress-wrap"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="progress-bar"&gt;&lt;div class="progress-fill" style="width:30%;background:var(--accent5)"&gt;&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="progress-pct"&gt;30%&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="topic-row"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="topic-icon"&gt;☁️&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="topic-name"&gt;WAN Technologies&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="progress-wrap"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="progress-bar"&gt;&lt;div class="progress-fill" style="width:55%;background:var(--accent6)"&gt;&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="progress-pct"&gt;55%&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;!-- Upcoming Schedule --&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;div class="panel"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;h3&gt;📅 Upcoming Schedule&lt;/h3&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="schedule-item"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="sch-date"&gt;&lt;div class="day"&gt;27&lt;/div&gt;&lt;div class="month"&gt;Feb&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="sch-info"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="title"&gt;OSPF Practice Exam&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="desc"&gt;60 questions · 90 minutes&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="sch-badge badge-blue"&gt;Exam&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="schedule-item"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="sch-date"&gt;&lt;div class="day"&gt;28&lt;/div&gt;&lt;div class="month"&gt;Feb&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="sch-info"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="title"&gt;VLAN Lab Session&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="desc"&gt;Inter-VLAN routing + trunk config&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="sch-badge badge-purple"&gt;Lab&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="schedule-item"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="sch-date"&gt;&lt;div class="day"&gt;01&lt;/div&gt;&lt;div class="month"&gt;Mar&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="sch-info"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="title"&gt;Security Module Review&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="desc"&gt;ACLs, NAT/PAT, AAA&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="sch-badge badge-green"&gt;Study&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="schedule-item"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="sch-date"&gt;&lt;div class="day"&gt;05&lt;/div&gt;&lt;div class="month"&gt;Mar&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="sch-info"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="title"&gt;Full Mock Exam #3&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="desc"&gt;120 questions · timed simulation&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="sch-badge badge-blue"&gt;Exam&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;!-- NETWORK TOOLS --&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;div class="section-head"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;h2&gt;🛠️ Network Tools&lt;/h2&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;a href="#" class="see-all"&gt;View all →&lt;/a&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;div class="tools-row"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;a href="#" class="tool-card" onclick="openTool('subnet')"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="tool-icon"&gt;🧮&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div&gt;&lt;div class="tool-name"&gt;Subnet Calculator&lt;/div&gt;&lt;div class="tool-desc"&gt;CIDR, wildcard, ranges&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/a&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;a href="#" class="tool-card" onclick="openTool('ping')"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="tool-icon"&gt;📡&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div&gt;&lt;div class="tool-name"&gt;Ping Simulator&lt;/div&gt;&lt;div class="tool-desc"&gt;Test connectivity paths&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/a&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;a href="#" class="tool-card" onclick="openTool('vlsm')"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="tool-icon"&gt;🗂️&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div&gt;&lt;div class="tool-name"&gt;VLSM Designer&lt;/div&gt;&lt;div class="tool-desc"&gt;Variable subnet masking&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/a&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;a href="#" class="tool-card" onclick="openTool('ospf')"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="tool-icon"&gt;🔄&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div&gt;&lt;div class="tool-name"&gt;OSPF Calculator&lt;/div&gt;&lt;div class="tool-desc"&gt;DR/BDR, cost metrics&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/a&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;a href="#" class="tool-card" onclick="openTool('ios')"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="tool-icon"&gt;💻&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div&gt;&lt;div class="tool-name"&gt;IOS Command Ref&lt;/div&gt;&lt;div class="tool-desc"&gt;Searchable command guide&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/a&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;!-- STUDY PLANNER + FLASHCARD --&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;div class="two-col"&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;!-- Planner --&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;div class="panel"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;h3&gt;📅 Weekly Planner — Feb 2026&lt;/h3&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="planner-grid"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="day-cell"&gt;&lt;div class="dc-name"&gt;Mon&lt;/div&gt;&lt;div class="dc-num"&gt;23&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="day-cell has-task"&gt;&lt;div class="dc-name"&gt;Tue&lt;/div&gt;&lt;div class="dc-num"&gt;24&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="day-cell has-task"&gt;&lt;div class="dc-name"&gt;Wed&lt;/div&gt;&lt;div class="dc-num"&gt;25&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="day-cell today has-task"&gt;&lt;div class="dc-name"&gt;Thu&lt;/div&gt;&lt;div class="dc-num"&gt;26&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="day-cell has-task"&gt;&lt;div class="dc-name"&gt;Fri&lt;/div&gt;&lt;div class="dc-num"&gt;27&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="day-cell"&gt;&lt;div class="dc-name"&gt;Sat&lt;/div&gt;&lt;div class="dc-num"&gt;28&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="day-cell"&gt;&lt;div class="dc-name"&gt;Sun&lt;/div&gt;&lt;div class="dc-num"&gt;01&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="task-list"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="task-item"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="task-check done" onclick="toggleTask(this)"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="task-text done-text"&gt;Review OSI Model layers&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="task-time"&gt;9:00 AM&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="task-item"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="task-check done" onclick="toggleTask(this)"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="task-text done-text"&gt;Complete OSPF lab&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="task-time"&gt;11:00 AM&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="task-item"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="task-check" onclick="toggleTask(this)"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="task-text"&gt;30 Flashcards — Subnetting&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="task-time"&gt;2:00 PM&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="task-item"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="task-check" onclick="toggleTask(this)"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="task-text"&gt;Watch: STP Deep Dive&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="task-time"&gt;4:00 PM&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="task-item"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="task-check" onclick="toggleTask(this)"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="task-text"&gt;Practice Exam Quiz #2&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="task-time"&gt;7:00 PM&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;!-- Flashcard preview --&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;div class="panel"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;h3&gt;🃏 Daily Flashcard&lt;/h3&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="flashcard-demo" id="flashcard" onclick="flipCard()"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div class="fc-inner"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="fc-face fc-front"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;div class="fc-label"&gt;Question&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;div class="fc-question"&gt;What is the default administrative distance for OSPF?&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;div class="fc-face fc-back"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;div class="fc-label"&gt;Answer&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;div class="fc-answer"&gt;OSPF has an administrative distance of &lt;strong&gt;110&lt;/strong&gt;. Lower AD values are preferred; OSPF is less trusted than EIGRP (90) but more than RIP (120).&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;p style="font-size:12px;color:var(--muted);text-align:center;margin-bottom:14px;"&gt;Click card to flip • Tap to reveal answer&lt;/p&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div class="fc-controls"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-ghost" onclick="prevCard()"&gt;← Prev&lt;/button&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-ghost" onclick="flipCard()"&gt;🔄 Flip&lt;/button&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-ghost" onclick="nextCard()"&gt;Next →&lt;/button&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div style="text-align:center;margin-top:14px;font-size:12px;color:var(--muted)"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>Card &lt;span id="cardNum"&gt;1&lt;/span&gt; of 200 · Deck: Routing Protocols</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;!-- SUBNET CALCULATOR TOOL (inline) --&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;div class="section-head"&gt;&lt;h2&gt;🧮 Subnet Calculator&lt;/h2&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;div class="panel" style="margin-bottom:36px"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:20px;flex-wrap:wrap"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;label style="font-size:12px;color:var(--muted);display:block;margin-bottom:6px"&gt;IP Address&lt;/label&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;input id="ipInput" type="text" value="192.168.1.0"</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>style="width:100%;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:inherit;font-size:13px;outline:none"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;label style="font-size:12px;color:var(--muted);display:block;margin-bottom:6px"&gt;Subnet Mask / CIDR&lt;/label&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;input id="maskInput" type="text" value="/24"</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">          </span>style="width:100%;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:inherit;font-size:13px;outline:none"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div style="display:flex;align-items:flex-end"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-primary" onclick="calcSubnet()" style="width:100%;justify-content:center"&gt;Calculate&lt;/button&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;div id="subnetResult" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;footer style="text-align:center;padding:20px 0;color:var(--muted);font-size:12px;border-top:1px solid var(--border)"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>NetAcad Pro © 2026 · CCNA 200-301 Prep Platform · Built for Cisco exam success</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;/footer&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2">&lt;/main&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2">&lt;!-- MODAL OVERLAY --&gt;</span></p>
+<p class="p2"><span class="s2">&lt;div id="modal" style="display:none;pointer-events:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(6px);z-index:300;align-items:center;justify-content:center"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;div style="background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:36px;max-width:500px;width:90%;position:relative"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;button onclick="closeModal()" style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.07);border:none;color:var(--text);width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:16px"&gt;✕&lt;/button&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;div id="modalContent"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2">&lt;/div&gt;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2">&lt;script&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>// Sidebar toggle</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>function toggleSidebar() {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>document.getElementById('sidebar').classList.toggle('open');</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>// Flashcard</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>const cards = [</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>{ q: "What is the default administrative distance for OSPF?", a: "OSPF has an administrative distance of 110. Lower AD values are preferred; OSPF is less trusted than EIGRP (90) but more trusted than RIP (120)." },</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>{ q: "What does the 'no shutdown' command do?", a: "It enables a network interface that is in a disabled (shutdown) state. Router interfaces are disabled by default and must be manually activated." },</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>{ q: "What is the range of VLAN IDs in a standard Cisco switch?", a: "Standard VLANs range from 1 to 1005. Extended VLANs range from 1006 to 4094. VLAN 1 is the default VLAN and cannot be deleted." },</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>{ q: "What protocol does OSPF use at Layer 3?", a: "OSPF uses IP Protocol number 89. It does not use TCP or UDP — it communicates directly over IP using multicast addresses 224.0.0.5 and 224.0.0.6." },</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>{ q: "What is the purpose of STP (Spanning Tree Protocol)?", a: "STP prevents Layer 2 switching loops by placing redundant ports in a blocking state. It elects a Root Bridge and calculates the shortest path using port costs." },</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>];</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>let cardIndex = 0;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>function updateCard() {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>const fc = document.getElementById('flashcard');</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>fc.classList.remove('flipped');</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>fc.querySelector('.fc-question').textContent = cards[cardIndex].q;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>fc.querySelector('.fc-answer').innerHTML = cards[cardIndex].a;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>document.getElementById('cardNum').textContent = cardIndex + 1;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>function flipCard() { document.getElementById('flashcard').classList.toggle('flipped'); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>function nextCard() { cardIndex = (cardIndex+1) % cards.length; updateCard(); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>function prevCard() { cardIndex = (cardIndex-1+cards.length) % cards.length; updateCard(); }</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>// Tasks</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>function toggleTask(el) {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>el.classList.toggle('done');</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>const txt = el.nextElementSibling;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>txt.classList.toggle('done-text');</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>// Subnet Calculator</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>function calcSubnet() {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>const ip = document.getElementById('ipInput').value.trim();</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>const mask = document.getElementById('maskInput').value.trim();</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>let cidr;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>if (mask.startsWith('/')) cidr = parseInt(mask.slice(1));</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>else {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>const parts = mask.split('.').map(Number);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>const bin = parts.map(p=&gt;p.toString(2).padStart(8,'0')).join('');</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>cidr = bin.split('').filter(b=&gt;b==='1').length;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>if (isNaN(cidr)||cidr&lt;0||cidr&gt;32) { alert('Invalid mask. Use /24 or 255.255.255.0'); return; }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>const parts = ip.split('.').map(Number);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>if (parts.length!==4||parts.some(p=&gt;isNaN(p)||p&lt;0||p&gt;255)) { alert('Invalid IP address'); return; }</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>const totalBits = 32;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>const hostBits = totalBits - cidr;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>const totalHosts = Math.pow(2,hostBits);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>const usable = Math.max(totalHosts-2,0);</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>const maskNum = cidr===0 ? 0 : (0xffffffff &lt;&lt; (32-cidr)) &gt;&gt;&gt; 0;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>const ipNum = ((parts[0]&lt;&lt;24)|(parts[1]&lt;&lt;16)|(parts[2]&lt;&lt;8)|parts[3]) &gt;&gt;&gt; 0;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>const netNum = (ipNum &amp; maskNum) &gt;&gt;&gt; 0;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>const bcastNum = (netNum | (~maskNum &gt;&gt;&gt; 0)) &gt;&gt;&gt; 0;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>const firstNum = cidr&lt;31 ? netNum+1 : netNum;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>const lastNum = cidr&lt;31 ? bcastNum-1 : bcastNum;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>const wildNum = (~maskNum) &gt;&gt;&gt; 0;</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>const toIP = n =&gt; [(n&gt;&gt;&gt;24)&amp;255,(n&gt;&gt;&gt;16)&amp;255,(n&gt;&gt;&gt;8)&amp;255,n&amp;255].join('.');</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>const toBin = n =&gt; [(n&gt;&gt;&gt;24)&amp;255,(n&gt;&gt;&gt;16)&amp;255,(n&gt;&gt;&gt;8)&amp;255,n&amp;255].map(b=&gt;b.toString(2).padStart(8,'0')).join('.');</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>const results = [</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>{ label:'Network Address', value: toIP(netNum) },</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>{ label:'Subnet Mask', value: toIP(maskNum) },</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>{ label:'Wildcard Mask', value: toIP(wildNum) },</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>{ label:'Broadcast', value: toIP(bcastNum) },</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>{ label:'First Host', value: toIP(firstNum) },</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>{ label:'Last Host', value: toIP(lastNum) },</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>{ label:'Total Hosts', value: totalHosts.toLocaleString() },</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>{ label:'Usable Hosts', value: usable.toLocaleString() },</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>];</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>const el = document.getElementById('subnetResult');</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>el.innerHTML = results.map(r=&gt;`</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px 14px"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div style="font-size:10px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px"&gt;${r.label}&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--accent1)"&gt;${r.value}&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>`).join('');</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>// Auto-calculate on load</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>calcSubnet();</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>// Modals</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>const modalData = {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>exam: { icon:'🎯', title:'Practice Exams', body:`&lt;p style="color:var(--muted);font-size:14px;line-height:1.7;margin:12px 0"&gt;Choose from 5 full-length CCNA 200-301 mock exams. Each exam contains 120 questions timed at 120 minutes — matching the real exam format.&lt;/p&gt;&lt;div style="display:flex;flex-direction:column;gap:8px"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>${['Full Mock Exam #1 — Completed (74%)','Full Mock Exam #2 — Completed (79%)','Full Mock Exam #3 — Available','Exam Focus: Routing Protocols','Exam Focus: Security &amp; WAN'].map((e,i)=&gt;`&lt;div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;font-size:13px"&gt;&lt;span&gt;${e}&lt;/span&gt;&lt;button class="btn btn-primary" style="font-size:11px;padding:6px 12px"&gt;${i&lt;2?'Review':'Start'}&lt;/button&gt;&lt;/div&gt;`).join('')}&lt;/div&gt;` },</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>study: { icon:'📚', title:'Study Materials', body:`&lt;p style="color:var(--muted);font-size:14px;line-height:1.7;margin:12px 0"&gt;Access all 12 CCNA study modules with notes, diagrams, and review questions.&lt;/p&gt;&lt;div style="display:flex;flex-direction:column;gap:8px"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>${['Network Fundamentals','IP Connectivity &amp; Routing','Switching &amp; VLANs','WAN Technologies','Network Security','Automation &amp; Programmability'].map(m=&gt;`&lt;div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px 16px;display:flex;justify-content:space-between;font-size:13px;align-items:center"&gt;&lt;span&gt;📄 ${m}&lt;/span&gt;&lt;a href="#" style="color:var(--accent1);font-size:12px"&gt;Open →&lt;/a&gt;&lt;/div&gt;`).join('')}&lt;/div&gt;` },</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>labs: { icon:'🔬', title:'Virtual Labs', body:`&lt;p style="color:var(--muted);font-size:14px;line-height:1.7;margin:12px 0"&gt;Hands-on simulated labs using drag-and-drop topology builders with CLI access.&lt;/p&gt;&lt;div style="display:flex;flex-direction:column;gap:8px"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>${['Basic Router Configuration','OSPF Single-Area Setup','VLAN &amp; Trunk Config','DHCP &amp; DNS Setup','ACL Configuration Lab','NAT/PAT Implementation'].map(l=&gt;`&lt;div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px 16px;display:flex;justify-content:space-between;font-size:13px;align-items:center"&gt;&lt;span&gt;⚗️ ${l}&lt;/span&gt;&lt;button class="btn btn-ghost" style="font-size:11px;padding:6px 12px"&gt;Launch&lt;/button&gt;&lt;/div&gt;`).join('')}&lt;/div&gt;` },</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>video: { icon:'🎬', title:'Video Tutorials', body:`&lt;p style="color:var(--muted);font-size:14px;line-height:1.7;margin:12px 0"&gt;Over 80 hours of HD tutorial content covering all CCNA exam domains.&lt;/p&gt;&lt;div style="display:flex;flex-direction:column;gap:8px"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>${['OSI Model Deep Dive (42 min)','IPv4 Addressing &amp; Subnetting (1h 20min)','OSPF Configuration (55 min)','Spanning Tree Protocol (48 min)','Network Security Basics (1h 05min)','Python &amp; Automation Intro (38 min)'].map(v=&gt;`&lt;div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px 16px;display:flex;justify-content:space-between;font-size:13px;align-items:center"&gt;&lt;span&gt;▶ ${v}&lt;/span&gt;&lt;a href="#" style="color:var(--accent5);font-size:12px"&gt;Watch →&lt;/a&gt;&lt;/div&gt;`).join('')}&lt;/div&gt;` },</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>flash: { icon:'🃏', title:'Flashcard Decks', body:`&lt;p style="color:var(--muted);font-size:14px;line-height:1.7;margin:12px 0"&gt;Spaced-repetition flashcard decks sorted by topic. Master cards are retired automatically.&lt;/p&gt;&lt;div style="display:flex;flex-direction:column;gap:8px"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>${['Routing Protocols (45 cards)','Subnetting Mastery (30 cards)','IOS Commands (55 cards)','Port Numbers &amp; Protocols (25 cards)','Security Terminology (28 cards)','Network Acronyms (17 cards)'].map(d=&gt;`&lt;div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px 16px;display:flex;justify-content:space-between;font-size:13px;align-items:center"&gt;&lt;span&gt;🃏 ${d}&lt;/span&gt;&lt;button class="btn btn-ghost" style="font-size:11px;padding:6px 12px"&gt;Study&lt;/button&gt;&lt;/div&gt;`).join('')}&lt;/div&gt;` },</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>cheat: { icon:'📋', title:'Cheat Sheets', body:`&lt;p style="color:var(--muted);font-size:14px;line-height:1.7;margin:12px 0"&gt;Printable and screen-optimized cheat sheets for last-minute review.&lt;/p&gt;&lt;div style="display:flex;flex-direction:column;gap:8px"&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>${['OSI Model Reference','IOS CLI Command Summary','Subnetting Quick Sheet','Common Port Numbers','Routing Protocol Comparison','ACL Syntax Reference'].map(s=&gt;`&lt;div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px 16px;display:flex;justify-content:space-between;font-size:13px;align-items:center"&gt;&lt;span&gt;📄 ${s}&lt;/span&gt;&lt;a href="#" style="color:var(--accent6);font-size:12px"&gt;Download PDF →&lt;/a&gt;&lt;/div&gt;`).join('')}&lt;/div&gt;` },</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>};</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>function openModal(type) {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>const d = modalData[type];</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>if(!d) return;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>document.getElementById('modalContent').innerHTML = `</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div style="font-size:32px;margin-bottom:12px"&gt;${d.icon}&lt;/div&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>&lt;h2 style="font-family:'Syne',sans-serif;font-size:20px;font-weight:800;margin-bottom:4px"&gt;${d.title}&lt;/h2&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span>${d.body}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>`;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>const modal = document.getElementById('modal');</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>modal.style.display = 'flex';</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>modal.style.pointerEvents = 'auto';</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>function closeModal() {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>const modal = document.getElementById('modal');</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>modal.style.display = 'none';</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>modal.style.pointerEvents = 'none';</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>document.getElementById('modal').addEventListener('click', function(e){ if(e.target===this) closeModal(); });</span></p>
+<p class="p3"><span class="s2"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>function openTool(name) {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>const tools = { subnet:'Subnet Calculator is embedded below on the page!', ping:'Ping Simulator: Enter a target IP to simulate ICMP echo requests and trace the path.', vlsm:'VLSM Designer: Plan subnets with variable length masks for efficient IP allocation.', ospf:'OSPF Calculator: Compute DR/BDR elections, cost metrics, and SPF tree results.', ios:'IOS Command Reference: Search 500+ IOS commands with syntax and examples.' };</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>openModal('exam');</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>document.getElementById('modalContent').innerHTML = `&lt;div style="font-size:32px;margin-bottom:12px"&gt;🛠️&lt;/div&gt;&lt;h2 style="font-family:'Syne',sans-serif;font-size:20px;font-weight:800;margin-bottom:12px"&gt;${name.toUpperCase()} Tool&lt;/h2&gt;&lt;p style="color:var(--muted);font-size:14px;line-height:1.7"&gt;${tools[name]||'Coming soon!'}&lt;/p&gt;&lt;button class="btn btn-primary" style="margin-top:20px" onclick="closeModal()"&gt;Close&lt;/button&gt;`;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s2">&lt;/script&gt;</span></p>
+<p class="p2"><span class="s2">&lt;/body&gt;</span></p>
+<p class="p2"><span class="s2">&lt;/html&gt;</span></p>
+</body>
+</html>
